@@ -1,0 +1,197 @@
+@mixin ab($t, $l, $b, $r) {
+    position: absolute;    
+    @if $l != n { left: $l; }
+    @if $t != n { top: $t; }
+    @if $r != n { right: $r; }
+    @if $b != n { bottom: $b; }
+}
+@mixin fixed($t, $l, $b, $r) {
+    position: fixed;
+    @if $l != n { left: $l; }
+    @if $t != n { top: $t; }
+    @if $r != n { right: $r; }
+    @if $b != n { bottom: $b; }    
+}
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}
+}
+@mixin border-inline-start($width, $style, $color) {
+    border-inline-start-width: $width;
+    border-inline-start-style: $style;
+    border-inline-start-color: $color;
+}  
+@mixin border-inline-end($width, $style, $color) {
+    border-inline-end-width: $width;
+    border-inline-end-style: $style;
+    border-inline-end-color: $color;
+}
+@mixin padding-start($value) {
+    -webkit-padding-start: $value; 
+        -moz-padding-start: $value;
+            padding-inline-start: $value;
+}
+@mixin padding-end($value) {
+    -webkit-padding-end: $value; 
+        -moz-padding-end: $value;
+            padding-inline-end: $value;
+}
+@mixin margin-start($value) {
+    -webkit-margin-start: $value;
+        -moz-margin-start: $value;
+            margin-inline-start: $value;
+}
+@mixin margin-end($value) {
+    -webkit-margin-end: $value;
+        -moz-margin-end: $value;
+            margin-inline-end: $value;
+}
+@mixin list-style-reset {
+    list-style: none;
+}
+@mixin font-body {
+    font-family: var(--ff-body);
+    font-family: "Helvetica Neue ME";
+}
+@mixin font-heading {
+    // font-family: var(--ff-heading);
+    font-family: "Interstate";
+}
+@mixin point-event {
+    pointer-events: none;     
+}
+@mixin point-cursor {
+    cursor: pointer;
+}
+@mixin visibility-hidden {
+    visibility: hidden;   
+    opacity: 0;
+}
+@mixin visibility-visible {
+    visibility: visible;
+    opacity: 1;
+}  
+@mixin transition {
+    transition: all 0.35s ease-in-out 0s;
+}  
+@mixin custom-scrollbar {
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 4px #d0d0d0;
+        -webkit-box-shadow: inset 0 0 #d0d0d0;
+        background-color: #d0d0d0;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+        background-color: #d0d0d0;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #000000; 
+        border-radius: 5px;
+    }
+}
+@mixin black-bg {
+    @include fixed(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);  
+    width: 100vw;
+    height: 100vh;   
+    z-index: -1;
+    @include visibility-hidden;       
+    transition: opacity 0.4s cubic-bezier(0,0,.2,1), visibility 0.4s cubic-bezier(0,0,.2,1); 
+}
+@mixin black-bg-open {
+    z-index: layer(popup-bg-black);    
+    @include visibility-visible; 
+}
+@keyframes fa-spin { 
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+}
+@keyframes mmfadeIn {
+    from { 
+        opacity: 0; 
+    }
+    to {
+        opacity: 1;
+    }
+}   
+@keyframes animation-top-bottom {  
+    0% {
+        opacity: 0;
+        transform: translate(0, -30px); 
+    } 
+    100% { 
+        opacity: 1;
+        transform: translate(0, 0);  
+    }
+}      
+@keyframes animation-loading1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes animation-loading2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(14px, 0); 
+    }
+} 
+@keyframes animation-show-loading2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(8px, 0); 
+    }
+} 
+@keyframes animation-loading3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+// manage z-index
+@function layer($name) {
+    @if map-has-key($layer, $name) {
+        @return map-get($layer, $name);  
+    }
+    @warn "The key #{$name} is not in the map ’$layer’";
+    @return null;
+};
+$layer: (  
+    header-fixed: 991,
+    dropdown-menu: 100,
+    popup-bg-black: 99, 
+    popup-content: 1001,  
+    tooltip: 2,
+    backtotop: 409,
+    control-button: 1, 
+    search-result: 9,
+    sort-by: 1,
+    sidebar: 100,
+);
+@import url(//db.onlinewebfonts.com/c/95cecf452d3208890088a5b4c19c7ecf?family=Helvetica+Neue+ME);
+@font-face {font-family: "Helvetica Neue ME"; src: url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.eot"); src: url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.woff") format("woff"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.svg#Helvetica Neue ME") format("svg"); }
+
+@import url(//db.onlinewebfonts.com/c/d93d9274dd628a112aadb4306542ef89?family=Interstate);
+@font-face {font-family: "Interstate"; src: url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.eot"); src: url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.woff") format("woff"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.svg#Interstate") format("svg"); }
+
+@import url(//db.onlinewebfonts.com/c/5812e9d6ae4f58c53ad038ebc36f13dc?family=Sackers+Gothic+Std);
+@font-face {font-family: "Sackers Gothic Std"; src: url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.eot"); src: url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.svg#Sackers Gothic Std") format("svg"); }
