@@ -13,6 +13,13 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        @media (hover : hover) {
+            &:hover {               
+                img {
+                    transform: scale(1.2);
+                }
+            }       
+        }   
     }
     .article-body {
         height: 100%;
@@ -24,6 +31,9 @@
         @media (min-width: 768px) {
             margin-bottom: 30px;
         }
+        img {
+            @include transition-img;
+        } 
     }
     .release-info {
         font-size: calc(var(--body-font-size) - 4px); 
@@ -203,6 +213,9 @@
             @media (min-width: 768px) {
                 margin-bottom: 30px;
             }
+            img {
+                @include transition-img;
+            } 
         }
         .article-relate-title {
             text-transform: uppercase;

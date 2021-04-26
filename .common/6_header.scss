@@ -317,15 +317,24 @@ header {
             > a,
             > .link-parent > a {
                 text-transform: uppercase;
-                letter-spacing: .2em;                
+                letter-spacing: .2em;  
+                position: relative;              
                 @include font-heading;
+                &:after {
+                    content: '';
+                    height: 2px;
+                    background: var(--body-link-hover);
+                    @include ab(n, 50%, -3px, 50%);
+                    @include transition;
+                }
             }            
             > .link-parent {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 .expand .svg__ui {
-                    display: flex;                    
+                    display: flex;    
+                    margin-left: 5px;                
                     svg path {
                         stroke: var(--header-nav-color); 
                     }
@@ -381,6 +390,10 @@ header {
                 @media (hover: hover) {
                     >a, > .link-parent a {
                         color: var(--header-nav-hover-color);
+                        &:after {
+                            left: 0;
+                            right: 0;
+                        }
                     } 
                     > .link-parent .expand .svg__ui svg path {
                         stroke: var(--header-nav-hover-color); 

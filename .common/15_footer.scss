@@ -18,12 +18,14 @@ footer {
 }
 .footer-menu--title, .footer-form--title, 
 .footer-social-links--title {
-    font-size: 16px;
-    line-height: 22.4px;
+    font-size: calc(var(--body-font-size) - 6px);
+    line-height: 30px;
     font-weight: 400;
     color: #ffffff; 
-    margin: 9px 0 18px;  
-    @include font-heading;
+    font-weight: 500;
+    margin: 0 0 15px;  
+    letter-spacing: .15em;
+    font-family: "Sackers Gothic Std";
 }
 .footer-logo-information {
     color: var(--footer-text-color);
@@ -43,10 +45,13 @@ footer {
         a {
             color: var(--footer-text-color);
             font-weight: 400;
-            font-size: calc(var(--body-font-size) - 4px);
+            font-size: calc(var(--body-font-size) - 6px);
             line-height: 22px; 
             letter-spacing: 0.15em;
             text-transform: uppercase;
+            @media (min-width: 768px) {
+                font-size: calc(var(--body-font-size) - 4px);
+            }
         }
         &:hover {
             @media (hover: hover) {
@@ -58,21 +63,32 @@ footer {
     }
 }
 .footer-block--newsletter {
-    .footer-social-links {              
+    .footer-social-links {     
+        display: flex;
+        flex-wrap: wrap;   
+        flex-direction: column;
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+        .footer-social-links--title {
+            margin: 0;
+            @media (min-width: 768px) {
+                margin: 0 30px 0 0;
+            }
+        }  
         ul {
             display: flex;
             align-items: center;
             @media (max-width: 767px) {
                 justify-content: center;
             }
-            li {
-                @include padding-end(15px);
-                @media (min-width: 992px) {
-                    @include padding-end(30px);
-                }
-                &:last-child {
-                    @include padding-end(0);
-                } 
+            li {                
+                &:not(:last-child) {
+                    @include padding-end(27px);
+                    @media (min-width: 992px) {
+                        @include padding-end(18px);
+                    }
+                }                
                 svg {
                     fill: var(--footer-text-color); 
                     path {
@@ -101,11 +117,11 @@ footer {
         margin-bottom: 11px; 
         color: #ffffff;
         height: 48px;
-        text-align: center;
-        text-transform: uppercase;
-        font-size: 14px;
+        text-align: center;                
         border-radius: 0;
-        @include font-heading;
+        padding: 10px;   
+        font-weight: 700;
+        @include font-heading;     
         @include placeholder {
             color: #ffffff; 
         }

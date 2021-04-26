@@ -16,6 +16,83 @@
 .slideshow-container {
     position: relative;
 }
+.home-slideshow {
+    .tns-outer {
+        > button {
+            display: none;
+        }
+    }
+    .block-item {
+        position: relative;
+        &.tns-slide-active {
+            .block-content {
+                display: block;
+            }
+        }
+    }
+    .slide-item {
+        background-position: center;
+    }
+    .block-content-inner {
+        @include ab(0, 0, n, n);
+    }
+    .block-content {
+        @include ab(0, 0, 0, 0);        
+        padding: 68px 15px 0;
+        max-width: 95vw;
+        width: 100%;
+        margin: 0 auto;  
+        display: none;              
+        @media (min-width: 992px) {
+            padding-top: 159px;
+        }
+        @media (min-width: 1400px) {
+            max-width: 1440px;            
+        }        
+        .text-1 {
+            @include font-heading;
+            font-size: 22px;
+            line-height: 21.8px;
+            letter-spacing: -1px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            @media (min-width: 768px) {
+                font-size: 30px;
+                line-height: 29.73px;
+                margin-bottom: 20px; 
+            }
+        }
+        .text-2 {
+            @include font-heading;
+            font-size: 36px;
+            line-height: 29.91px;
+            letter-spacing: -1px;
+            font-weight: 700;
+            @media (min-width: 768px) {
+                font-size: 50px;
+                line-height: 49.55px;
+            }
+        }
+        .block-button {
+            margin-top: 205px;
+            @media (min-width: 768px) {
+                margin-top: 30px;
+            }
+        }
+    }
+    .slide_ui-controls--nav button {
+        border-color: #fff;
+        svg path {
+            stroke: #fff;
+        }
+        &.slide_ui-btn-prev {
+            left: 0;
+        }
+        &.slide_ui-btn-next {
+            right: 0;
+        }
+    }
+}
 /* End section slideshow */
 
 /* Section gallery slide */
@@ -49,7 +126,8 @@
         overflow: hidden;          
         @include transition;
         img {
-            transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);       
+            @include transition-img;
+            object-fit: cover;
         }  
         > a {
             position: relative;
@@ -61,8 +139,16 @@
             }
         }
         .block-content {
-            @include ab(0, 0, n, n);
+            @include ab(0, 50%, n, n);
+            transform: translateX(-50%);
             padding: 40px 60px;
+            width: 100%;
+            text-align: center;
+            @media (min-width: 768px) {
+                left: 0;
+                text-align: left;
+                transform: translateX(0);
+            }
         }
         .text-1 {
             text-transform: uppercase;
@@ -96,9 +182,10 @@
                left: 50%;
                top: 100%;
                padding: 35px;
+               text-align: center;
                transform: translate(-50%, -100%);
                @media (min-width: 768px) {                   
-                   top: 50%;
+                   top: 50%;                   
                    transform: translate(-50%, -50%);
                }
             }
@@ -176,6 +263,30 @@
         justify-content: center;
         height: 100%;
     }
+    .block-image {
+        @include transition;
+        overflow: hidden;
+        img {
+            @include transition-img;
+        }  
+        .image__style {
+            position: relative;
+            display: block;                      
+            &:after {
+                content: '';
+                border: 2px solid #fff;
+                @include ab(20px, 20px, 20px, 20px);
+            }
+        }
+        @media (hover : hover) {
+            &:hover {
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);                
+                img {
+                    transform: scale(1.2);
+                }
+            }       
+        }   
+    }
     .block-paragraph {
         padding: 46px 0;
     }
@@ -188,6 +299,13 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        &:hover {
+            @media (hover: hover) {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
     }
     .article-body {
         height: 100%;
@@ -195,7 +313,10 @@
         flex-direction: column;
     }
     .article-header {
-        margin: 0 0 19px;
+        margin: 0 0 19px;                
+        img {
+            @include transition-img;
+        }
         @media (min-width: 768px) {
             margin-bottom: 30px;
         }

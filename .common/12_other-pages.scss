@@ -15,26 +15,84 @@
     }
 }  
 /* Privacy Policy */
-.templatePage .page-content {
-    ul {
-        margin: 17px 0 0;
-        @media (min-width: 992px) {
-            @include padding-start(44px);
-        }
-        li {
-            line-height: 26.6px;
-            a {
-                color: var(--main-color);
+.templatePage {
+    background: #E5E5E5;
+    .page-content {
+        ul {
+            margin: 17px 0 0;
+            @media (min-width: 992px) {
+                @include padding-start(44px);
+            }
+            li {
+                line-height: 26.6px;
+                a {
+                    color: var(--main-color);
+                }
             }
         }
-    }
-    p {
-        margin: 17px 0 0;
+        p {
+            margin: 17px 0 0;
+        }
     }
 }
 
 /* About us */
-
+.home-about-page {
+    .block-type-content {
+        display: flex;   
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        @media (min-width: 768px) {
+            padding-left: 4.5%;
+        }
+        > * {
+            max-width: 550px;
+        }
+        p {
+            margin: 0;
+        }
+        .text-1 {
+            margin: 0 0 7px;
+            font-size: calc(var(--body-font-size) - 4px);
+            line-height: 19.54px;
+            letter-spacing: 0.18em;   
+            font-weight: 700;         
+        }
+        .text-2 {
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 36px;
+            margin: 0 0 9px;
+            @include font-heading;
+        }
+        .text-3 {
+            line-height: 29px;
+        }        
+    }
+    .block-type-image {
+        .image__style {
+            @include transition;
+            &:after {
+                content: '';
+                border: 2px solid #fff;
+                @include ab(20px, 20px, 20px, 20px);
+            }
+            img {
+                @include transition-img;
+            } 
+            @media (hover : hover) {
+                &:hover {
+                    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);                
+                    img {
+                        transform: scale(1.2);
+                    }
+                }       
+            }   
+        }
+    }
+}
 
 /* End About us */
 
@@ -117,13 +175,7 @@
     .contact-form {
         .form-control {
             margin-bottom: 30px;
-        }
-        label {
-            display: block;
-            line-height: 19.1px;
-            color: var(--body-link);
-            margin-bottom: 8px;
-        }
+        }      
         input, textarea {
             width: 100%;
         }
@@ -146,6 +198,16 @@
 /* End Contact */
 
 /* Account page */
+#customer_sidebar {
+    .action-bottom {
+        .btn {
+            margin-bottom: 15px;
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+    }
+}
 .form-account {
     max-width: 674px;
     margin: 0;
@@ -224,9 +286,7 @@
         .label {
             label {
                 display: block;
-                margin: 0;
-                font-size: calc(var(--body-font-size) + 2px);
-                color: var(--section-heading-cl);
+                margin: 0;                               
                 @include padding-end(10px);
             }
         }
@@ -246,15 +306,14 @@
                     opacity: 0;
                     cursor: pointer;
                     &:checked ~ span:after {
-                        @include icon-check-black;
-                        @include ab(50%, 0,  n, n);
+                        @include icon-check-black;                        
+                        @include ab(0, 0,  n, n);
                         width: 20px;
                         height: 20px; 
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        pointer-events: none;
-                        transform: translate(0, -50%);
+                        pointer-events: none;                        
                     }
                 }
                 >span { 
@@ -268,6 +327,7 @@
                         border-radius: var(--border-radius-default);
                         width: 20px;
                         height: 20px;
+                        border-radius: 3px;
                         @include margin-end(7px); 
                     }
                     >span {
@@ -483,29 +543,29 @@
             text-align: center;
             display: flex;
             justify-content: center;
+            border: 1px solid var(--body-color);
+            border-radius: 8px;
             @media (min-width: 992px) {
                 max-width: 50%; 
             }
             input {
-                flex: 1; 
-                border: 2px solid var(--btn1-border-cl);
+                flex: 1;                 
             } 
             button {
-                padding: 7px 15px; 
-                color: var(--btn1-cl);
-                background: var(--btn1-bg-cl);
-                border: var(--btn1-border-width) solid var(--btn1-border-cl); 
-                svg {
-                    stroke: var(--btn1-cl);
+                padding: 0 20px;  
+                display: flex;
+                align-items: center;              
+                svg {                    
+                    path {
+                        fill: var(--body-color);
+                    }
                 } 
             }
         } 
         .result-item {
             display: flex;
-            align-items: center;
-            padding-bottom: 20px;
-            margin-bottom: 20px; 
-            border-bottom: 1px solid var(--body-border-color);
+            align-items: center;            
+            margin-bottom: 40px;             
             &:last-child {
                 border-bottom: none;  
             }
@@ -521,6 +581,7 @@
                 h4 {
                     font-size: calc(var(--product-item-name) + 0.2rem);
                     margin-bottom: 5px;
+                    font-weight: 700;                    
                 }
             }
         }

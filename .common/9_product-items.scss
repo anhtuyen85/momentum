@@ -170,12 +170,18 @@
 	.product-label {
 		color: var(--btn1-cl);
     	background: var(--btn1-bg-cl);
-		font-size: calc(var(--body-font-size) - 2px);
+		font-size: calc(var(--body-font-size) - 6px);
 		padding: 4px 8px; 
 	} 
+	.product-card__body-inner {
+		text-align: center;
+	}
+	.product-price {
+		justify-content: center;
+	}
 	.product-card__title {
-		font-size: calc(var(--card-title) - 0.6rem); 
-		line-height: calc(var(--card-title) - 0.6rem);
+		font-size: calc(var(--card-title) - 6px); 
+		line-height: calc(var(--card-title) - 6px);
 		font-weight: var(--body-font-weight); 
 		margin: 0 0 13px;
 		font-weight: 700;
@@ -231,21 +237,27 @@
 	}  
 } 
 .product-price {
-	margin: 0 0 12px; 
+	margin: 0; 
 	display: flex;
 	align-items: center; 
 	flex-wrap: wrap;
 	color: var(--price-color);	
-	font-size: var(--card-price); 
+	font-size: calc(var(--card-price) - 3px); 
 	line-height: 19.5px;   
+	@media (min-width: 768px) {
+		font-size: var(--card-price); 
+	}
 	.price-label {
 		padding: 0 5px;
 	}
 	.price-compare {		
-		font-size: var(--card-price-compare); 
+		font-size: calc(var(--card-price-compare) - 3px); 
 		color: var(--price-compare-color); 
 		text-decoration: line-through;
 		@include padding-end(22px);
+		@media (min-width: 768px) {
+			color: var(--price-compare-color); 
+		}
 	}
 	.price-sale {
 		color: var(--price-sale-color); 
@@ -301,7 +313,7 @@
 		.media-thumbnail { 			
 			border: 1px solid transparent;     
 			&.tns-nav-active {				
-				border: 1px solid var(--body-border-color); 
+				border-color: var(--body-color); 
 			}
 		} 
 	}
@@ -337,6 +349,10 @@
 		font-size: calc(var(--card-price) + 3px); 
 		line-height: 26.25px;  
 		margin: 0 0 17px; 
+		justify-content: center;
+		@media (min-width: 768px) {
+			justify-content: flex-start;
+		}
 		.price-compare {
 			@include padding-start(15px);
 			@include padding-end(0); 
@@ -549,7 +565,11 @@
 			color: var(--body-link);
 			text-transform: uppercase;
 			line-height: 14.4px;
-			letter-spacing: 0.18em;			 
+			letter-spacing: 0.18em;	
+			text-align: center;		 
+			@media (min-width: 768px) {
+				text-align: left;
+			}
             p {
                 margin: 0;
             }
@@ -561,6 +581,10 @@
         }
 		.swatch-container {
 			flex-wrap: wrap;
+			justify-content: center;
+			@media (min-width: 768px) {
+				justify-content: flex-start;
+			}
 		}
         .swatch-item {
             padding: 0;

@@ -46,6 +46,7 @@ body.modal-opened {
         }
     }  
     button.btn-dialog--close {
+        @include font-body;
         @include point-cursor;
         @include ab(0, n, n, 0);
         min-width: 45px;
@@ -68,9 +69,12 @@ body.modal-opened {
 }
 /* Popup quickview */
 #popupQuickview {
+    &.modal-ui>div:not([data-dialog-close]) {
+        max-width: 1420px;
+    }
     .product-media {
         .media-thumbnail.tns-nav-active {
-            border: 1px solid #ececec;
+            border: 1px solid var(--body-color);
         }
         .product-thumbnail {
             @media (min-width: 768px) {
@@ -103,10 +107,7 @@ body.modal-opened {
                     border: 1px solid #ececec; 
                     color: var(--popup-text-color); 
                 }
-            }
-            .swatch-variants-wrapper .swatch-item .tooltip {
-                background: inherit;
-            }
+            }          
         }
     }
 }

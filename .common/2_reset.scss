@@ -59,6 +59,7 @@ body {
 .image__style { 
     position: relative;
     display: block;
+    overflow: hidden;
 }
 .imageCrop-true .bg__lazy { 
     background-size: cover;
@@ -236,10 +237,15 @@ select::-ms-expand {
     display: none;
 }
 input, textarea {
-    padding: 10px 15px; 
+    padding: 20px 26px; 
+    text-transform: uppercase;
+    font-family: 'Sackers Gothic Std';    
+    font-weight: 500;
+    color: #4B5759;    
+    font-size: calc(var(--body-font-size) - 6px);    
     @include placeholder {
-        color: var(--body-link);
-    }
+        color: #4B5759;
+    }    
 }
 input {
     height: 56px;           
@@ -247,6 +253,13 @@ input {
 textarea {
     max-width: 100%;
     min-width: 100%;
+}
+.form-control {
+    label {
+        display: block;
+        line-height: 29px;
+        margin-bottom: 13px;
+    }    
 }
 .text-center {
     text-align: center !important;
@@ -285,6 +298,7 @@ textarea {
     @include point-cursor;
     @include transition;
     @include font-heading;  
+    font-weight: 700;
     display: inline-block;
     padding: 10px; 
     text-transform: uppercase;
@@ -685,7 +699,7 @@ body:not(.templateIndex) #main-content {
     .collection-image {
         overflow: hidden;
         img {
-            transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);       
+            @include transition-img;
         }          
     }
     .collection-title {
@@ -731,10 +745,22 @@ body:not(.templateIndex) #main-content {
             }
         }        
     }
+    @media (min-width: 1025px) {
+        .tns-outer {
+            margin: -20px -20px 0;
+            .tns-ovh {
+                padding: 20px 20px 0;
+            }
+        }
+    }
 }
 .section-heading-container {
     .section-heading {
         @include font-heading;
         font-size: 30px;
     }
+}
+.arn_icon {
+    width: 18px;
+    height: 21px;
 }

@@ -19,7 +19,8 @@
 .collection-sidebar {
     @media (max-width: 767px) { 
         @include fixed(0, 0, 0, n); 
-        width: 80%; 
+        width: 100%; 
+        max-width: 375px;
         background: var(--body-bg-color);
         padding: 20px;
         z-index: layer(sidebar);
