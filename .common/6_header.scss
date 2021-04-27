@@ -313,7 +313,7 @@ header {
             }
         } 
         >li {            
-            padding: 12px 16px;
+            padding: 23px 16px;
             > a,
             > .link-parent > a {
                 text-transform: uppercase;
@@ -350,7 +350,13 @@ header {
                 padding: 20px 0;  
                 min-height: 100%;                  
                 animation: mmfadeIn 0.5s ease-in-out;                           
-                display: none;                
+                display: none;   
+                &:after {
+                    content: '';
+                    height: 48px;
+                    width: 100%;
+                    @include ab(-48px, 0, n, n);
+                }             
                 >.dropdown-menu {  
                     flex-wrap: wrap; 
                     display: flex;
@@ -375,6 +381,8 @@ header {
                     } 
                     a,  .link-parent a {
                         color: var(--menu-link);
+                        font-size: calc(var(--body-font-size) - 2px);
+                        font-weight: var(--body-font-weight);
                         &:hover {
                             @media (hover: hover) {
                                 color: var(--menu-link-hover);
@@ -425,14 +433,13 @@ header {
     }
 }
 .header-mobile-navigation {
-    @include fixed(71px, 0, n, n);
+    @include fixed(68px, 0, n, n);
     @include visibility-hidden;
-    padding: 15px 0;
+    padding: 15px 0 54px;
     background: var(--header-bg-color);    
     width: 100%;
-    height: calc(100vh - 71px);
-    overflow: hidden;
-    overflow-y: auto;        
+    height: calc(100vh - 68px);
+    overflow: hidden;       
     z-index: layer(popup-bg-black);
     transition: all .35s ease-in-out 0s;    
     border-top: 1px solid var(--header-nav-color);
@@ -442,8 +449,26 @@ header {
     .header-icons .number {
         top: -2px; 
     }  
+    .navigation-inner {
+        height: calc(100vh - 137px);
+        overflow: hidden;  
+        overflow-y: auto;
+    }
 }    
 .navigation-mobile {   
+    .mobile-login {
+        @include fixed(n, 0, 0, 0);
+        z-index: laye(header-fixed);
+        a {
+            width: 100%;
+            font-weight: 500;
+            font-family: "Sackers Gothic Std";
+            font-size: calc(var(--body-font-size) - 3px);
+            letter-spacing: 1.5px;
+            line-height: 30px;
+            padding: 12px;
+        }
+    }
     .navigation-close {
         display: none;
         align-items: center;
@@ -456,10 +481,24 @@ header {
             }  
         }
     } 
+    .navigation-mobile-second {        
+        position: relative;
+        &:after {
+            content: '';
+            height: 1px;
+            background: var(--header-nav-color);
+            @include ab(0, 50px, n, 50px);
+        }
+    }
     .menu-mobile {
+        padding: 32px;        
         >li {
             >a, >.link-parent >a {
                 text-transform: uppercase; 
+                justify-content: center;
+                line-height: 36px;
+                font-weight: var(--header-nav-weight);
+                @include font-heading;
             }
             .icon {
                 width: 19px;
@@ -474,22 +513,18 @@ header {
             }
         }
         li {
-            @include list-style-reset;
-            >a, >.link-parent {
-                border-bottom: 1px solid var(--menu-br-color);  
-            } 
+            @include list-style-reset;            
             a {
-                font-weight: var(--header-nav-weight);
-                font-size: var(--header-text-size);
+                font-size: var(--body-font-size);
                 color: var(--header-nav-color);  
-                padding: 12px 18px; 
+                padding: 12px 0; 
                 display: flex;
                 align-items: center;  
                 flex: 1;  
+                justify-content: center;
             } 
             .link-parent {
-                display: flex;
-                justify-content: space-between;
+                display: flex;                
                 .expand {
                     width: 40px; 
                     display: flex;
@@ -499,9 +534,13 @@ header {
                     .svg__ui {
                         display: flex;
                         transition: transform 0.35s ease-in-out;
-                        svg path {
-                            fill: var(--header-nav-color); 
-                        } 
+                        svg {
+                            height: 15px;
+                            width: 18px;
+                            path {
+                                stroke: var(--header-nav-color); 
+                            } 
+                        }
                     }
                 } 
             }
@@ -515,7 +554,7 @@ header {
                 >.link-parent .expand .svg__ui {
                     transform: rotate(180deg);
                     svg path {
-                        fill: var(--header-nav-hover-color); 
+                        stroke: var(--header-nav-hover-color); 
                     }
                 } 
                 >.link-child-dropdown {

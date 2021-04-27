@@ -39,16 +39,14 @@
 			}
 		}
 		.hover-group {
-			@include ab(10px, n, n, 10px);   
+			@include ab(12px, n, n, 10px);   
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center; 
 			transition: transform 0.35s ease-in-out;
-			@media (min-width: 1025px) {				
-				background: #ffffff; 
-				transform: translate(70px, 0);
-				padding: 5px 0; 
+			@media (min-width: 1025px) {								
+				transform: translate(70px, 0);				
 			}
 			.product-card--quickview {
 				display: none;
@@ -61,29 +59,20 @@
 				.btn, a {
 					svg {
 						circle, path {
-							stroke: var(--body-color);
-						}
-						circle, path {
-							fill: none !important;
-						}
+							fill: #fff;
+						}						
 					}
 					&:hover {
 						@media (hover: hover) {
 							circle, path {
-								stroke: var(--body-link-hover);
-							}
-							circle, path {
-								fill: none !important;
-							}
+								fill: var(--body-link-hover);	
+							}							
 						}
 					}
 				}
 			}
-			> div {
-				padding: 5px 10px; 
-				@media (max-width: 1024px) {					
-					background: #ffffff; 
-					border-radius: 50%;
+			> div {				
+				@media (max-width: 1024px) {															
 					margin-bottom: 5px;
 					width: 40px;
 					height: 40px; 
@@ -170,8 +159,11 @@
 	.product-label {
 		color: var(--btn1-cl);
     	background: var(--btn1-bg-cl);
-		font-size: calc(var(--body-font-size) - 6px);
+		font-size: calc(var(--body-font-size) - 8px);
 		padding: 4px 8px; 
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: .18em;
 	} 
 	.product-card__body-inner {
 		text-align: center;
@@ -246,17 +238,26 @@
 	line-height: 19.5px;   
 	@media (min-width: 768px) {
 		font-size: var(--card-price); 
+		line-height: 23px;
 	}
 	.price-label {
 		padding: 0 5px;
 	}
 	.price-compare {		
 		font-size: calc(var(--card-price-compare) - 3px); 
-		color: var(--price-compare-color); 
-		text-decoration: line-through;
-		@include padding-end(22px);
+		color: var(--price-compare-color); 		
+		@include margin-start(22px);
+		position: relative;
+		&:after {
+			content: '';
+			width: 100%;
+			height: 1px;
+			background-color: var(--price-compare-color);
+			margin-top: 3px;
+			@include ab(50%, 0, n, n);
+		}
 		@media (min-width: 768px) {
-			color: var(--price-compare-color); 
+			font-size: var(--card-price-compare); 
 		}
 	}
 	.price-sale {
@@ -353,9 +354,8 @@
 		@media (min-width: 768px) {
 			justify-content: flex-start;
 		}
-		.price-compare {
-			@include padding-start(15px);
-			@include padding-end(0); 
+		.price-compare {			
+			font-size: calc(var(--card-price-compare) + 3px);
 		}
 	}
 	.product-stock {
@@ -736,11 +736,3 @@
 	}
 }
 /* End icon share */
-
-/* Related product */
-.sectioncart-recommendations, .sectionproduct-recommendations {
-    .section-heading-container {
-        text-align: start !important; 
-    }   
-}
-/* End related product */

@@ -758,6 +758,10 @@ body:not(.templateIndex) #main-content {
     .section-heading {
         @include font-heading;
         font-size: 30px;
+        svg {
+            display: block;
+            margin: 0 auto 15px;
+        }
     }
 }
 .arn_icon {
