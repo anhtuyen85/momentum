@@ -5,7 +5,7 @@ html {
     padding-bottom: 0 !important;    
 }
 body {    
-    line-height: 1.4; 
+    line-height: 29px; 
     background: var(--body-bg-color);
     font-weight: var(--body-font-weight); 
     font-size: var(--body-font-size);          
@@ -59,7 +59,7 @@ body {
 .image__style { 
     position: relative;
     display: block;
-    overflow: hidden;
+    overflow: hidden;    
 }
 .imageCrop-true .bg__lazy { 
     background-size: cover;
@@ -237,18 +237,18 @@ select::-ms-expand {
     display: none;
 }
 input, textarea {
-    padding: 20px 26px; 
-    text-transform: uppercase;
-    font-family: 'Sackers Gothic Std';    
+    padding: 20px 26px;           
     font-weight: 500;
-    color: #4B5759;    
-    font-size: calc(var(--body-font-size) - 6px);    
+    color: #4B5759;          
     @include placeholder {
         color: #4B5759;
     }    
 }
 input {
-    height: 56px;           
+    height: 56px;    
+    font-size: calc(var(--body-font-size) - 6px);  
+    text-transform: uppercase;    
+    font-family: 'Sackers Gothic Std';    
 }
 textarea {
     max-width: 100%;
@@ -699,7 +699,7 @@ body:not(.templateIndex) #main-content {
     .collection-image {
         overflow: hidden;
         img {
-            @include transition-img;
+            @extend %transition-img;
         }          
     }
     .collection-title {

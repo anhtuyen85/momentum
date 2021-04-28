@@ -62,6 +62,11 @@
 							fill: #fff;
 						}						
 					}
+					&.loading {
+						.svg__ui {
+							visibility: hidden;
+						}
+					}
 					&:hover {
 						@media (hover: hover) {
 							circle, path {
@@ -229,10 +234,11 @@
 	}  
 } 
 .product-price {
-	margin: 0; 
+	margin: 0 -11px; 
 	display: flex;
 	align-items: center; 
 	flex-wrap: wrap;
+	letter-spacing: .1em;
 	color: var(--price-color);	
 	font-size: calc(var(--card-price) - 3px); 
 	line-height: 19.5px;   
@@ -240,21 +246,22 @@
 		font-size: var(--card-price); 
 		line-height: 23px;
 	}
+	> span {
+		padding: 0 11px;
+	}
 	.price-label {
 		padding: 0 5px;
 	}
 	.price-compare {		
 		font-size: calc(var(--card-price-compare) - 3px); 
-		color: var(--price-compare-color); 		
-		@include margin-start(22px);
+		color: var(--price-compare-color); 				
 		position: relative;
 		&:after {
-			content: '';
-			width: 100%;
+			content: '';			
 			height: 1px;
 			background-color: var(--price-compare-color);
 			margin-top: 3px;
-			@include ab(50%, 0, n, n);
+			@include ab(50%, 11px, n, 11px);
 		}
 		@media (min-width: 768px) {
 			font-size: var(--card-price-compare); 
@@ -367,7 +374,6 @@
 	}
 	.product-detail_short-description {
 		font-size: var(--body-font-size);  
-		line-height: 29px;
 		color: var(--body-color);  
 		font-weight: 400;
 		margin-bottom: 24px;  

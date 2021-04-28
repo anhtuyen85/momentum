@@ -66,21 +66,16 @@
             line-height: 36px;
             margin: 0 0 9px;
             @include font-heading;
-        }
-        .text-3 {
-            line-height: 29px;
-        }        
+        }         
     }
     .block-type-image {
         .image__style {
             @include transition;
             &:after {
-                content: '';
-                border: 2px solid #fff;
-                @include ab(20px, 20px, 20px, 20px);
+                @extend %image-after;
             }
             img {
-                @include transition-img;
+                @extend %transition-img;
             } 
             @media (hover : hover) {
                 &:hover {
@@ -549,7 +544,8 @@
                 max-width: 50%; 
             }
             input {
-                flex: 1;                 
+                flex: 1;        
+                width: 100%;         
             } 
             button {
                 padding: 0 20px;  

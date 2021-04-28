@@ -323,7 +323,7 @@ header {
                 &:after {
                     content: '';
                     height: 2px;
-                    background: var(--body-link-hover);
+                    background: var(--header-nav-hover-color);
                     @include ab(n, 50%, -3px, 50%);
                     @include transition;
                 }
@@ -368,7 +368,7 @@ header {
                     @media (min-width: 1400px) {
                         max-width: 1440px;
                     }
-                    >li {
+                    > li {
                         flex: 0 0 25%;
                         padding: 0 10px 15px;
                         > .link-parent a {
@@ -397,14 +397,14 @@ header {
             &:hover {
                 @media (hover: hover) {
                     >a, > .link-parent a {
-                        color: var(--header-nav-hover-color);
+                        color: var(--header-nav-color);
                         &:after {
                             left: 0;
                             right: 0;
                         }
                     } 
                     > .link-parent .expand .svg__ui svg path {
-                        stroke: var(--header-nav-hover-color); 
+                        stroke: var(--header-nav-color); 
                     }
                    > .link-child-dropdown { 
                         display: block; 
@@ -450,7 +450,7 @@ header {
         top: -2px; 
     }  
     .navigation-inner {
-        height: calc(100vh - 137px);
+        height: calc(100vh - 160px);
         overflow: hidden;  
         overflow-y: auto;
     }
@@ -491,7 +491,7 @@ header {
         }
     }
     .menu-mobile {
-        padding: 32px;        
+        padding: 32px 50px;        
         >li {
             >a, >.link-parent >a {
                 text-transform: uppercase; 
@@ -524,13 +524,16 @@ header {
                 justify-content: center;
             } 
             .link-parent {
-                display: flex;                
+                display: flex;       
+                position: relative;                         
                 .expand {
                     width: 40px; 
+                    height: 60px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     cursor: pointer; 
+                    @include ab(0, 100%, n, n);
                     .svg__ui {
                         display: flex;
                         transition: transform 0.35s ease-in-out;
