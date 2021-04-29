@@ -43,7 +43,10 @@ body {
         z-index: 999;   
         background-repeat: no-repeat;
         background-position: center;  
-    }     
+    } 
+    .fa-star, .fa-star-checked, .fa-star-half-o, .fa-star-o, .stamped-fa-star, .stamped-fa-star-checked, .stamped-fa-star-half-o, .stamped-fa-star-o {
+        color: var(--rating-star-color);            
+    }    
 }
 *, *:before, *:after {
     box-sizing: border-box;
@@ -63,6 +66,11 @@ body {
 }
 .imageCrop-true .bg__lazy { 
     background-size: cover;
+}
+.image--cropped {
+    img {
+        object-fit: cover;
+    }
 }
 :focus {
     outline: none;
@@ -486,6 +494,7 @@ img {
     padding: 0;
     margin: 0;    
     font-size: 12px;
+    line-height: 20px;
     font-weight: 500;
     text-transform: uppercase;    
     font-family: "Sackers Gothic Std";
@@ -767,4 +776,15 @@ body:not(.templateIndex) #main-content {
 .arn_icon {
     width: 18px;
     height: 21px;
+}
+.banner-mobile {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+.banner-desktop {
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+    }
 }

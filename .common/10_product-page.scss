@@ -5,6 +5,91 @@
     }
     #breadcrumb {
         background: #f7f7f7;
+    }       
+    [data-count="0"] .stamped-summary-starrating i:before {
+        color: var(--rating-star-empty-color);
+    }
+    .stamped-form-review-rating a {
+        color: var(--rating-star-color);     
+        &:hover {
+            color: var(--rating-star-color);     
+        }
+    }
+    .stamped-container {
+        @include font-body;
+    }
+    .product-page-reviews--title {
+        @include font-heading;
+        font-size: 30px;
+        font-weight: 700;      
+        margin:  30px 0 0;  
+        text-align: center;
+        @media (min-width: 768px) {
+            margin-top: 40px;
+            text-align: left;
+        }
+    }
+    .stamped-container[data-count="0"] .stamped-empty-state:before {
+        color: var(--rating-star-color);   
+    }
+    div[data-count="0"] .summary-overview, div[data-widget-style*=standard][data-count="0"] .summary-overview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 15px;
+    }
+    .stamped-summary-actions-newquestion, .stamped-summary-actions-newreview {
+        @media (max-width: 480px) {
+            margin-bottom: 20px;
+        }
+    }
+    #stamped-main-widget {
+        margin: 0;
+    }    
+    .stamped-form-label {
+        font-size: calc(var(--body-font-size) - 4px);
+        color: var(--body-color);
+        + .stamped-form-input {
+            text-transform: none;            
+        }
+    }
+    input.stamped-form-input-email, 
+    input.stamped-form-input-text,
+    .stamped-form-input-textarea {
+        padding: 5px 15px;
+        font-size: calc(var(--body-font-size) - 4px);
+        border: none;
+    }
+    .stamped-messages .stamped-thank-you {
+        padding: 0;
+        border: none;
+        margin-top: 40px;
+    }
+    .stamped-messages .stamped-share-links a {
+        display: inline-block;
+    }
+    p.stamped-review-content-body {
+        font-size: calc(var(--body-font-size) - 4px);
+    }
+    .stamped-review-header-title {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+    }
+    .stamped-summary-actions-newquestion:before, 
+    .stamped-summary-actions-newreview:before, 
+    .stamped-summary-actions-mobile-filter i:before, 
+    .stamped-summary-actions-clear:before {
+        color: var(--body-link-hover);
+    }
+    ul.stamped-tabs li.active {
+        color: var(--body-link-hover) !important;
+        border-color: var(--body-link-hover) !important;
+    }
+    .summary-rating-bar > div,
+    .stamped-review-avatar {
+        background: var(--body-link-hover) !important;
     }
 }
 .section-product-template {
@@ -45,6 +130,31 @@
                 margin-left: 25px;
                 list-style: decimal outside none;
             }
+            table {
+                tr {
+                    &:first-child {
+                        td {
+                            padding-top: 0;
+                        }
+                    }
+                    &:not(:last-child) {
+                        td {
+                            border-bottom: 1px solid rgba(0, 0, 0, .1);
+                        }
+                    }
+                }
+                td {
+                    padding: 18px 10px;                    
+                    font-size: calc(var(--body-font-size) - 4px);
+                    &:first-child {
+                        padding-left: 0;
+                        width: 40%;
+                        @media (min-width: 600px) {
+                            width: 248px;
+                        }
+                    }
+                }
+            }
         }
         &:not(.product-description-tab-pane) {
             .product__toggle-head {
@@ -81,12 +191,17 @@
                 line-height: 13.2px;
                 font-weight: 700;
                 text-transform: uppercase;
-                text-align: start;                                             
+                text-align: start;      
+                @media (max-width: 767px) {
+                    font-family: "Sackers Gothic Std";  
+                    letter-spacing: 0.18em;  
+                    font-weight: 800;                                  
+                }
                 @media (min-width: 768px) { 
                     letter-spacing: 0.18em;
                     font-size: 16px;
                     line-height: 19.54px;
-                    margin-right: 44px;
+                    margin-right: 44px;                    
                 }
                 a {
                     color: var(--body-link);
@@ -129,8 +244,7 @@
                 width: 100%;                  
             }
             .product__toggle-mobile {
-                position: relative; 
-                margin-bottom: 15px; 
+                position: relative;                 
                 @media (min-width: 768px) {
                     display: none;  
                 }
@@ -195,7 +309,7 @@
                 }   
             }
         }
-    }
+    }   
     /* End product review */
 }
 /* end product page */

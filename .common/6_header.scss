@@ -50,6 +50,7 @@ header {
     .section-header {
         background: var(--header-bg-color); 
         padding: 11px 0; 
+        position: relative;
         @media (min-width: 992px) {
             padding: 15px 0 48px; 
         }
@@ -180,7 +181,21 @@ header {
                 &.show-compare svg path {
                     stroke: initial;
                     fill: var(--header-nav-color);
-                }                 
+                }  
+                &[data-arn-action] {
+                    svg path {
+                        fill: none;
+                        stroke: var(--header-nav-color);
+                    }
+                    &:hover {
+                        @media (hover: hover) {
+                            svg path {
+                                fill: none;
+                                stroke: var(--header-nav-hover-color);
+                            }
+                        }                        
+                    }
+                }               
                 &:hover {
                     @media (hover: hover) {
                         color: var(--header-nav-hover-color);
@@ -188,8 +203,8 @@ header {
                             fill: var(--header-nav-hover-color); 
                         }
                         &.show-compare svg path {
-                            stroke: initial;
-                            fill: var(--header-nav-hover-color); 
+                            fill: none;
+                            stroke: var(--header-nav-hover-color); 
                         } 
                     } 
                 }
@@ -336,7 +351,7 @@ header {
                     display: flex;    
                     margin-left: 5px;                
                     svg path {
-                        stroke: var(--header-nav-color); 
+                        fill: var(--header-nav-color); 
                     }
                 }
             }
@@ -349,8 +364,8 @@ header {
                 width: 100vw;  
                 padding: 20px 0;  
                 min-height: 100%;                  
-                animation: mmfadeIn 0.5s ease-in-out;                           
-                display: none;   
+                animation: mmfadeIn 0.5s ease-in-out;                                           
+                display: none;
                 &:after {
                     content: '';
                     height: 48px;
@@ -645,8 +660,16 @@ header {
     }
 }
 .btn-currencies {
-    .currency-flag {
-        margin-right: 16.78px;
+    .currency-flag {  
+        + span {
+            display: none;
+            @media (min-width: 768px) {
+                display: block;
+            }
+        }      
+        @media (min-width: 768px) {
+            margin-right: 16.78px;
+        }
     }
 }
 /* End header */
