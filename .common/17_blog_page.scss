@@ -118,26 +118,25 @@
                 display: flex; 
                 &:not(:last-child) {
                     margin-bottom: 15px; 
-                    padding-bottom: 15px; 
-                    border-bottom: 1px solid var(--body-border-color);
                 }
             }
             .article-header {
-                flex: 0 0 104px; 
+                flex: 0 0 104px;                 
             }
             .article-body {
                 @include margin-start(12px);
                 .article-title {
                     font-size: var(--body-font-size);
                     line-height: 19.1px; 
-                    margin: 0 0 10px;
+                    margin: 0 0 5px;
                     font-weight: 700;
                     @include font-heading;
                 }
                 .release-info {
                     font-size: calc(var(--body-font-size) - 8px);
                     line-height: 16.37px;   
-                    letter-spacing: .18em;                 
+                    letter-spacing: .18em;  
+                    margin: 0;               
                 }
             }
         }
@@ -192,8 +191,80 @@
         }
     }
     .social-share {
-        margin: 50px 0 0;
-    }
+        margin: 30px 0 0;
+        .share-title {
+            display: none;
+        }
+        .share-links {            
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;          
+            width: 100%;		            
+            .btn-social-share {
+                cursor: pointer;			
+            }
+            .list-inline {			
+                visibility: hidden;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 -9px;
+                transform: translateY(-50%);
+                @include ab(50%, 50px, n, n);	                
+                li {
+                    padding: 5px 9px;
+                    opacity: 0;
+                    margin: 0;
+                    transform: translateY(-5px);
+                    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+                    .social-label {					
+                        display: none;
+                    }
+                    a {
+                        transition: none;
+                        .svg__ui {
+                            transition: all .35s ease-in-out 0s;
+                            width: 27.37px;
+                            height: 27.37px;
+                            border-radius: 50%;
+                            background: #000;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        svg path {						
+                            fill: #fff;
+                        }
+                        @media (hover : hover) {
+                            &:hover {
+                                .svg__ui {
+                                    background: var(--body-link-hover);
+                                }
+                            }
+                        }
+                    }
+                }
+            }	
+            &.active {
+                .list-inline {		
+                    visibility: visible;						
+                    li {
+                        opacity: 1;
+                        transform: translateY(0);
+                        &:nth-child(1) {
+                            transition-delay: 0s;
+                        }
+                        &:nth-child(2) {
+                            transition-delay: 0.15s;
+                        }
+                        &:nth-child(3) {
+                            transition-delay: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }   
     .relate-article {        
         padding-top: 50px;        
         display: flex; 

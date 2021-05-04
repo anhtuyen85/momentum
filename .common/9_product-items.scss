@@ -220,9 +220,9 @@
         content: "";
         @include ab(0, 0, 0, 0);   
         margin: auto;
-        background: #333333;               
-        width: 18px; 
-        height: 18px;
+        background: var(--body-link-hover);               
+        width: 30px; 
+        height: 30px;
         animation: fa-spin 2s infinite linear;    
         -webkit-mask-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='spinner' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg'%3E%3Cpath d='M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z' class=''%3E%3C/path%3E%3C/svg%3E"); 
         mask-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='spinner' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg'%3E%3Cpath d='M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z' class=''%3E%3C/path%3E%3C/svg%3E");  
@@ -231,9 +231,9 @@
 		color: transparent; 
 	}
 	svg {
-		stroke: transparent !important; 
+		fill: transparent !important; 
 		path, circle {
-			stroke: transparent !important; 
+			fill: transparent !important; 
 		}
 	}  
 } 
@@ -336,8 +336,87 @@
 		} 
 	}
 } 
+.product-gallery {
+	.share-links {
+		margin: 30px 0 0;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;		
+		@media (min-width: 768px) {
+			justify-content: flex-start;
+		}	
+		.btn-social-share {
+			cursor: pointer;			
+		}
+		.list-inline {			
+			visibility: hidden;
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -9px;
+			transform: translateY(-50%);
+			@include ab(50%, n, n, n);	
+			left: calc(50% + 50px);
+			@media (min-width: 768px) {
+				left: 50px;
+			}
+			li {
+				padding: 5px 9px;
+				opacity: 0;
+				margin: 0;
+				transform: translateY(-5px);
+				transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+				.social-label {					
+					display: none;
+				}
+				a {
+					transition: none;
+					.svg__ui {
+						transition: all .35s ease-in-out 0s;
+						width: 27.37px;
+						height: 27.37px;
+						border-radius: 50%;
+						background: #000;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+					svg path {						
+						fill: #fff;
+					}
+					@media (hover : hover) {
+						&:hover {
+							.svg__ui {
+								background: var(--body-link-hover);
+							}
+						}
+					}
+				}
+			}
+		}	
+		&.active {
+			.list-inline {		
+				visibility: visible;						
+				li {
+					opacity: 1;
+					transform: translateY(0);
+					&:nth-child(1) {
+						transition-delay: 0s;
+					}
+					&:nth-child(2) {
+						transition-delay: 0.15s;
+					}
+					&:nth-child(3) {
+						transition-delay: 0.3s;
+					}
+				}
+			}
+		}
+	}
+}
 .product-info { 
-	padding-top: 20px;		
+	padding-top: 20px;				
 	> * {
 		max-width: 600px;		
 		text-align: center;	
@@ -354,7 +433,7 @@
 	}
 	.product-title {
 		font-weight: 700;		
-		margin: 0 0 9px; 
+		margin-bottom: 9px; 
 		font-size: 28px;
 		line-height: 35.56px;
 		letter-spacing: -1.5px;
@@ -363,6 +442,14 @@
 			margin-bottom: 16px; 
 			font-size: 36px;						
 		}
+	}
+	.product-collection-title {
+		margin-top: 0;
+		margin-bottom: 7px;
+		text-transform: uppercase;
+		letter-spacing: 0.18em;
+		font-size: calc(var(--body-font-size) - 6px);
+		line-height: 17px;
 	}	
 	.product-group {		
 		@media (min-width: 768px) {

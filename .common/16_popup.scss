@@ -71,14 +71,19 @@ body.modal-opened {
 #popupQuickview {
     &.modal-ui>div:not([data-dialog-close]) {
         max-width: 1420px;
-    }
-    .product-media {
-        .media-thumbnail.tns-nav-active {
-            border: 1px solid var(--body-color);
+    }    
+    .product-gallery .share-links {
+        justify-content: center;
+        .btn-social-share {
+            display: none;
         }
-        .product-thumbnail {
-            @media (min-width: 768px) {
-                width: 100px;
+        .list-inline {
+            left: 0;
+            visibility: visible;
+            transform: translateY(0);
+            position: static;
+            li {
+                opacity: 1;
             }
         }
     }

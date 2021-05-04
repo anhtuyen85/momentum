@@ -42,11 +42,7 @@ header {
                 }
             }         
         }
-    }     
-    .header-sticky {
-        @include fixed(0, 0, n, 0);
-        z-index: layer(header-fixed);   
-    } 
+    }         
     .section-header {
         background: var(--header-bg-color); 
         padding: 11px 0; 
@@ -54,6 +50,10 @@ header {
         @media (min-width: 992px) {
             padding: 15px 0 48px; 
         }
+        &.header-sticky {
+            @include fixed(0, 0, n, 0);
+            z-index: layer(header-fixed);   
+        } 
     }  
     .hamburger-btn {
         padding: 0; 

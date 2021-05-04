@@ -21,12 +21,12 @@
     .product-page-reviews--title {
         @include font-heading;
         font-size: 30px;
+        line-height: 36px;
         font-weight: 700;      
         margin:  30px 0 0;  
         text-align: center;
         @media (min-width: 768px) {
             margin-top: 40px;
-            text-align: left;
         }
     }
     .stamped-container[data-count="0"] .stamped-empty-state:before {
