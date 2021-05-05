@@ -200,8 +200,7 @@
         @media (min-width: 768px) {
             margin-top: 0;
         }
-        .cart-detail-title {
-            color: var(--main-color);
+        .cart-detail-title {            
             margin-bottom: 20px;            
             h5 {
                 color: inherit;
@@ -259,19 +258,15 @@
         .cart-empty-svg {
             margin: 0 0 12px;
         }
-        .cart-title {
-            color: var(--main-color);
+        .cart-title {            
             margin: 0 0 6px;
             line-height: 36px;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.18em;
             @include font-heading; 
 
         }
         p {
             margin: 0 0 30px;
-            font-size: calc(var(--body-font-size) + 2px);
-            line-height: 24px; 
-            font-weight: 600;
             @media (min-width: 1200px) {
                 max-width: 690px;
                 margin: 0 auto 30px;

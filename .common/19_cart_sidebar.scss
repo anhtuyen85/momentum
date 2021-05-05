@@ -1,0 +1,15 @@
+/* Cart Sidebar */
+.show-cart-drawer {
+    #CartDrawer {
+        visibility: visible;
+        z-index: layer(popup-content),
+    }
+}
+#CartDrawer {
+    @include fixed(0, n, n, 0);
+    visibility: hidden;
+    width: 100%;
+    max-width: 670px;    
+    background: var(--popup-bg-color);
+    padding: 30px 35px 90px;
+}

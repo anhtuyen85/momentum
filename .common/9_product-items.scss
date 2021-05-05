@@ -277,7 +277,7 @@
 	.soldout {
 		text-transform: uppercase;
 		color: var(--body-link-hover);
-		font-size: calc(var(--body-font-size) - 4px);
+		font-size: calc(var(--body-font-size) - 6px);
 		font-weight: 700;
 	}
 }
@@ -567,6 +567,7 @@
 			width: 48px;
 			height: 48px;
 			border: 2px solid rgba(0, 0, 0, 0.1);
+			@include transition;
 			.wlcp-target-label {
 				display: none;
 			}

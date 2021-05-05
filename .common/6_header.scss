@@ -64,7 +64,7 @@ header {
             margin: 0 auto;
         }   
         svg path {
-            fill: var(--main-color);
+            fill: var(--body-link-hover);
         }         
     }
     .header-navigation {
@@ -248,11 +248,11 @@ header {
                             font-size: var(--header-text-size); 
                             border: none; 
                             &.active {
-                                color: var(--main-color);  
+                                color: var(--body-link-hover);  
                             } 
                             &:hover {
                                 @media (hover: hover) {
-                                    color: var(--main-color); 
+                                    color: var(--body-link-hover); 
                                 }
                             }
                         }
@@ -285,15 +285,18 @@ header {
         }
     }
     .number {
-        @include ab(5px, 12px, n, n);
-        width: 16px;
-        height: 16px;
+        @include ab(-4px, 12px, n, n);
+        width: 20px;
+        height: 20px;
         font-size: 10px;
         text-align: center;
         line-height: 16px; 
         border-radius: 50%; 
-        color: var(--header-nav-color);
-        background: var(--main-color);
+        color: var(--btn1-cl);
+        background: var(--btn1-bg-cl);
+        &[data-cart-count="0"] {
+            display: none;
+        }
     }
 }
 .hamburger-close {
