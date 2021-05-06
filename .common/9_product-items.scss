@@ -418,18 +418,15 @@
 .product-info { 
 	padding-top: 20px;				
 	> * {
-		max-width: 600px;		
-		text-align: center;	
+		max-width: 600px;				
 		@media (max-width: 767px) {
 			margin-left: auto;
 			margin-right: auto;
+			text-align: center;	
 		}
 	}
 	@media (min-width: 992px) {
-		padding-top: 0; 
-		> * {
-			text-align: left;
-		}
+		padding-top: 0; 		
 	}
 	.product-title {
 		font-weight: 700;		
@@ -486,6 +483,39 @@
 	}
 	.product-form-cart {
 		margin-bottom: 16px;
+	}
+	.product-key-selling {
+		margin-top: 27px;
+		ul {
+			list-style: none;
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: -10px;
+			margin-right: -10px;			
+			li {
+				min-width: 50%;
+				padding: 0 10px;
+				flex: 1 1 auto;
+				position: relative;							
+				text-transform: uppercase;
+				font-size: calc(var(--body-font-size) - 6px);
+				letter-spacing: .1em;
+				display: flex;		
+				align-items: center;		
+				justify-content: center;
+				@media (min-width: 768px) {
+					justify-content: flex-start;
+				}
+				&:before {
+					content: '';
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					background: var(--body-link-hover);
+					margin: 0 10px 0 0;				
+				}
+			}
+		}
 	}
 	.product-cart {
 		.product-cart-inner {						
@@ -651,7 +681,7 @@
 		border: none;
 		padding: 0; 
 		text-align: center;
-		font-family: "Sackers Gothic Std";
+		@include font-custom;
 		font-weight: 800;
 		font-size: 25px;
 		height: 48px;

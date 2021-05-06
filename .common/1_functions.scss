@@ -52,12 +52,15 @@
     list-style: none;
 }
 @mixin font-body {
-    font-family: var(--ff-body);
+    //font-family: var(--ff-body);
     font-family: "Helvetica Neue ME";
 }
 @mixin font-heading {
     // font-family: var(--ff-heading);
     font-family: "Interstate";
+}
+@mixin font-custom {
+    font-family: "Sackers Gothic Std";
 }
 @mixin point-event {
     pointer-events: none;     
@@ -78,18 +81,18 @@
 }  
 @mixin custom-scrollbar {
     &::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 4px #d0d0d0;
-        -webkit-box-shadow: inset 0 0 #d0d0d0;
-        background-color: #d0d0d0;
+        box-shadow: inset 0 0 6px var(--body-color);
+        -webkit-box-shadow: inset 0 0 var(--body-color);
+        background-color: var(--body-color);
         border-radius: 5px;
     }
     &::-webkit-scrollbar {
         width: 4px;
-        background-color: #d0d0d0;
+        background-color: var(--body-color);
         border-radius: 5px;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: #000000; 
+        background-color: var(--body-link-hover);
         border-radius: 5px;
     }
 }
@@ -228,4 +231,4 @@ $layer: (
 @font-face {font-family: "Interstate"; src: url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.eot"); src: url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.woff") format("woff"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d93d9274dd628a112aadb4306542ef89.svg#Interstate") format("svg"); }
 
 @import url(//db.onlinewebfonts.com/c/5812e9d6ae4f58c53ad038ebc36f13dc?family=Sackers+Gothic+Std);
-@font-face {font-family: "Sackers Gothic Std"; src: url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.eot"); src: url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.svg#Sackers Gothic Std") format("svg"); }
+@font-face {@include font-custom; src: url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.eot"); src: url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/5812e9d6ae4f58c53ad038ebc36f13dc.svg#Sackers Gothic Std") format("svg"); }

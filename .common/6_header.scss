@@ -480,7 +480,7 @@ header {
         a {
             width: 100%;
             font-weight: 500;
-            font-family: "Sackers Gothic Std";
+            @include font-custom;
             font-size: calc(var(--body-font-size) - 3px);
             letter-spacing: 1.5px;
             line-height: 30px;

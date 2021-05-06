@@ -213,7 +213,7 @@
                 font-size: 20px;                    
                 letter-spacing: 0;   
                 margin: 0 auto 20px;   
-                font-family: "Sackers Gothic Std";
+                @include font-custom;
                 font-weight: 500;
                 line-height: 24px;
                 @media (min-width: 768px) {
@@ -229,15 +229,8 @@
                     margin-top: auto;
                 }
             }
-            .btn {
-                border: 3px solid #fff;
-                background: #f2f2f2;
-                padding: 14px;
-                width: 100%;
-                max-width: 240px;
-                font-size: 17px;
-                color: var(--body-color);
-                margin-top: 38px;                
+            .btn {                                
+                min-width: 240px;                       
             }
         }
     }
