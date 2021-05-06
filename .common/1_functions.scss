@@ -148,6 +148,26 @@
         transform: translate(0, 0);  
     }
 }      
+@keyframes animation-right-left {
+    from {
+        opacity: 0;
+        transform: translateX(670px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}  
+@keyframes animation-left-right {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(670px);
+    }
+}  
 @keyframes animation-loading1 {
     0% {
         transform: scale(0);
@@ -193,13 +213,13 @@ $layer: (
     header-fixed: 991,
     dropdown-menu: 100,
     popup-bg-black: 992, 
-    popup-content: 1001,  
+    popup-content: 1001,      
     tooltip: 2,
     backtotop: 409,
     control-button: 1, 
     search-result: 9,
     sort-by: 1,
-    sidebar: 1001,
+    sidebar: 1002,
 );
 @import url(//db.onlinewebfonts.com/c/95cecf452d3208890088a5b4c19c7ecf?family=Helvetica+Neue+ME);
 @font-face {font-family: "Helvetica Neue ME"; src: url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.eot"); src: url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.woff") format("woff"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/95cecf452d3208890088a5b4c19c7ecf.svg#Helvetica Neue ME") format("svg"); }

@@ -275,7 +275,19 @@
     } 
 }
 
-.templateCart .sectioncart-recommendations {
-    margin-top: 60px;
-} 
+.templateCart {    
+    &.show-cart-drawer {
+        &:after {
+            content: none;
+        }
+    }
+    .header-icons {
+        a[data-control="show-cart-drawer"] {
+            pointer-events: none;
+        }
+    }
+    .sectioncart-recommendations {
+        margin-top: 60px;
+    } 
+}
 /* End Cart page */ 
