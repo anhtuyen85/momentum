@@ -13,7 +13,7 @@
         }
     }
     #CartDrawer {                
-        animation: animation-right-left .8s both;          
+        animation: animation-right-left .8s both;                        
     }
 }
 #CartDrawer {
@@ -23,8 +23,8 @@
     max-width: 670px;    
     background: var(--popup-bg-color);
     padding: 30px 25px 50px; 
-    z-index: layer(sidebar);      
-    animation: animation-left-right .8s both;           
+    z-index: layer(sidebar);          
+    animation: animation-left-right .8s both;               
     @media (min-width: 500px) {
         padding-left: 35px;
         padding-right: 35px;

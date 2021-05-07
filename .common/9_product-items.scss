@@ -607,14 +607,14 @@
 			path {
 				stroke: var(--body-link);
 			}		
-			&.arn_added {
-				color: var(--body-link-hover);
-				.wlcp-target-label {
-					text-indent: initial;
-					>span {
-						display: none;
-					}
-				}							
+			&.arn_added,
+			&.arn-wl-added {
+				color: var(--body-link-hover); 
+				border-color: var(--body-link-hover);
+				background: none;
+				path {
+					stroke: var(--body-link-hover);
+				}										
 			}
 			&:hover {
 				@media (hover: hover) {
@@ -625,22 +625,7 @@
 					}					
 				}
 			}
-		}
-		.product-card--compare {
-			a {
-				path {
-					stroke: none;
-					fill: var(--body-link);
-				}
-				&:hover {
-					@media (hover: hover) {						
-						path {
-							fill: var(--body-link-hover);
-						}					
-					}
-				}
-			}
-		}
+		}		
 	}
 	.product-information {
 		padding-top: 15px;		
@@ -752,6 +737,7 @@
         .swatch-item {
             padding: 0;
             margin: 0 0 10px;
+			display: flex;
             @include margin-end(19.45px);
 			position: relative;
             .tooltip {

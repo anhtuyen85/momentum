@@ -19,14 +19,10 @@
         color: var(--body-link);   
         text-transform: uppercase;     
     }  
-    .cart-title {
-        text-align: center;
+    .cart-title {        
         line-height: 45px;
         font-weight: 700;
-        margin-bottom: 30px; 
-        @media (min-width: 768px) {
-            margin-bottom: 64px;
-        }
+        @include top-spacing;        
     }  
     .col-price, .col-total {
         color: var(--body-link); 
@@ -263,7 +259,6 @@
             line-height: 36px;
             letter-spacing: 0.18em;
             @include font-heading; 
-
         }
         p {
             margin: 0 0 30px;

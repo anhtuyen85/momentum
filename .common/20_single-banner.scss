@@ -1,3 +1,47 @@
+.sectionstatic-top-banner {
+    .gallery-container {
+        margin-bottom: 70px;
+        @media (min-width: 768px) {
+            margin-bottom: 120px;
+        }
+        .block-button .btn {
+            @include font-custom;        
+        }  
+        .block-content {
+            max-width: 1440px;           
+            .text-1 {                
+                font-size: 36px;
+                line-height: 40px;
+                @media (min-width: 768px) {
+                    font-size: 70px;
+                    line-height: 76px;
+                }
+            }
+        }
+        @media (max-width: 767px) {
+            .block-content {
+                position: static;
+                transform: translate(0, 0);
+                padding: 70px 0 0;
+                .text-1 {
+                    @include font-heading;                    
+                }
+                .text-1, .text-2 {
+                    color: var(--body-color) !important;
+                }
+                .block-button {
+                    margin-top: 0;
+                }
+            }
+        }
+    }      
+}
+.sectionstatic-bottom-banner {
+    margin-top: 55px; 
+    @media (min-width: 768px) {        
+        margin-top: 120px;
+    }
+}
 .gallery-container {
     .banner-mobile {
         @media (min-width: 768px) {
@@ -32,12 +76,13 @@
         width: 100%;           
         left: 50%;
         top: 100%;
-        padding: 35px;               
+        padding: 30px 20px 42px;               
         transform: translate(-50%, -100%);
         @include ab(100%, 50%, n, n);
         @media (min-width: 768px) {                   
             top: 50%;                   
             transform: translate(-50%, -50%);
+            padding: 35px;               
         }
         @media (max-width: 767px) {
             height: 100%;
@@ -51,7 +96,7 @@
     .text-1 {
         font-size: 20px;                    
         letter-spacing: 0;   
-        margin: 0 auto 20px;   
+        margin-bottom: 20px;   
         @include font-custom;
         font-weight: 500;
         line-height: 24px;
@@ -68,7 +113,10 @@
             margin-top: auto;
         }
     }
+    .block-button {
+        margin-top: 38px;     
+    }
     .btn {       
-        min-width: 240px;        
+        min-width: 240px;           
     }
 }

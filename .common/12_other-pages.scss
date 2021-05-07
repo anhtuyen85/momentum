@@ -37,18 +37,15 @@
         flex-direction: column;
         justify-content: center;
         padding-top: 40px;
-        padding-bottom: 40px;
-        @media (min-width: 768px) {
-            padding-left: 4.5%;
-        }
+        padding-bottom: 40px;        
         > * {
-            max-width: 550px;
+            @include custom-width;
         }
         p {
             margin: 0;
         }
         .text-1 {
-            margin: 0 0 7px;
+            margin-bottom: 7px;
             font-size: calc(var(--body-font-size) - 4px);
             line-height: 19.54px;
             letter-spacing: 0.18em;   
@@ -58,7 +55,7 @@
             font-size: 30px;
             font-weight: 700;
             line-height: 36px;
-            margin: 0 0 9px;
+            margin-bottom: 9px;
             @include font-heading;
         }         
     }
@@ -87,8 +84,7 @@
 /* Contact */
 .home-contact-page {
     .section-heading-container {
-        text-align: center;
-        margin-bottom: 20px;
+       @include top-spacing;
     }
     .section-heading {
         line-height: 45px; 
@@ -186,7 +182,13 @@
 }
 #customerLogin, #customerRecoverPassword, #customerRegister {
     max-width: 545px;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    @include top-spacing;
+    margin-bottom: 55px;
+    @media (min-width: 768px) {
+        margin-bottom: 120px;
+    }
     .title {
         font-size: 30px;
         line-height: 36px;
@@ -658,8 +660,7 @@
 /* Search page */
 .templateSearch {
     .page-heading {
-        text-align: center;
-        margin-bottom: 30px;
+        @include top-spacing;
         h1 {
             margin-bottom: 30px;
         }

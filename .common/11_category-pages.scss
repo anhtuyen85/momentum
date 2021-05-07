@@ -1,22 +1,26 @@
 /* Category page */
-.templateCollection .boxed-wrapper #main-content {
-    margin: 0;
-    .col-lg-3 {
-        position: relative;
-        @media (min-width: 992px) {
-            > *  {                        
-                padding: 111px 25px 95px 0;            
-            }
-            &:after {
-                content: '';
-                background: #e5e5e5;
-                width: 50vw;
-                z-index: -1;
-                @include ab(0, n, 0, 15px);
-            }
-        }        
+.templateCollection {
+    .boxed-wrapper #main-content {  
+        .col-lg-3 {
+            position: relative;
+            @media (min-width: 992px) {
+                > *  {                        
+                    padding: 111px 25px 95px 0;            
+                }
+                &:after {
+                    content: '';
+                    background: #e5e5e5;
+                    width: 50vw;
+                    z-index: -1;
+                    @include ab(0, n, 0, 15px);
+                }
+            }        
+        }
+    }  
+    .sectionstatic-bottom-banner {
+        margin-top: 0;
     }
-}  
+}
 .section_content-wrapper {
     @media (min-width: 992px) {
         margin-top: 118px;

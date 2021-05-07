@@ -32,7 +32,7 @@ body.modal-opened {
         padding: 40px 30px;          
         width: calc(100% - 30px);
         max-width: 812px;
-        max-height: 80vh;  
+        max-height: 90vh;  
         overflow: hidden;
         overflow-y: auto;
         transform: translate(-50%, -50.1%); 
@@ -74,6 +74,7 @@ body.modal-opened {
     }    
     .product-gallery .share-links {
         justify-content: center;
+        padding-left: 125px;
         .btn-social-share {
             display: none;
         }

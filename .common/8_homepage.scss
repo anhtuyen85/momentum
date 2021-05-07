@@ -294,7 +294,7 @@
         }
     }    
     .block-image {    
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             order: 1;            
         }    
         .block-item-inner {
@@ -342,18 +342,12 @@
         }
     }
     .block-paragraph {
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             order: 2;            
         }
         .block-item-inner {
-            padding: 46px 5.75%;
-            > * {
-                max-width: 550px;
-            }
-            @media (min-width: 1200px) {
-                padding-left: 7.5%;
-                padding-right: 7.5%;
-            }
+            padding: 46px 0;
+           @include custom-width;
         }         
     }
 } 
