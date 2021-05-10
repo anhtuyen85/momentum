@@ -90,12 +90,18 @@
             margin-bottom: 40px;  
         }
         .filter-group {            
-            &.collapse-ui {
+            &.dropdownUI {
+                user-select: none;
                 position: relative;
                 .filter-title {
                     padding-right: 40px;
+                    margin-bottom: 0;
+                    position: static !important;
                 }
-                .collapse-click {
+                .tags-list {
+                    padding-top: 25px;
+                }
+                .dropdown-trigger {
                     @include ab(0, n, n, 0);
                     cursor: pointer;
                     span {
@@ -105,22 +111,25 @@
                         display: flex;
                         justify-content: flex-end;
                     }
-                    .collapse-icon--close {
+                    .dropdown-icon--close {
                         display: none;
                     }
                 }  
-                .filter-listing {
-                    display: none;
+                .dropdown-listing {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.15s ease-in-out;       
                 }
-                &.active {
-                    .collapse-icon--close {
+                &.active {                    
+                    .dropdown-icon--close {
                         display: flex;
                     }
-                    .collapse-icon--open {
+                    .dropdown-icon--open {
                         display: none;
                     }
-                    .filter-listing {
-                        display: block;
+                    .dropdown-listing {
+                        transition: max-height 0.35s ease-in-out;
+                        max-height: 100%;
                     }
                 } 
             }
@@ -129,7 +138,7 @@
             font-size: 18px;
             font-weight: 500;
             text-transform: uppercase; 
-            line-height: 21.6px;
+            line-height: 21.6px;            
             @include font-custom;
             margin-bottom: 25px;
         }

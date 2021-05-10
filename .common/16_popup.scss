@@ -69,6 +69,9 @@ body.modal-opened {
 }
 /* Popup quickview */
 #popupQuickview {
+    .image__style {
+        margin-top: 1px;
+    }
     &.modal-ui>div:not([data-dialog-close]) {
         max-width: 1420px;
     }    

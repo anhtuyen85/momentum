@@ -83,6 +83,9 @@ header {
             flex: 0 0 86px;
             max-width: 86px;
             padding: 0 20px;
+            img {
+                max-width: 46px !important;
+            }
         }
     }
 }
