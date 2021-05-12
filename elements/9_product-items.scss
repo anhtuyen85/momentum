@@ -543,9 +543,9 @@
 				font-size: calc(var(--body-font-size) - 4px);
 				&[disabled] {
 					cursor: not-allowed;
-					color: var(--btn1-cl);
-					background: var(--btn1-bg-cl);
-					border-color: var(--btn1-border-cl);
+					color: var(--btn2-cl);
+					background: var(--btn2-bg-cl);
+					border-color: var(--btn2-border-cl);
 					opacity: 0.8;
 				}   
 			}
