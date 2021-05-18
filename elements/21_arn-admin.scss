@@ -1,7 +1,7 @@
 .horizontal-menu .main-menu > li[aria-expanded=true] {
     >.megaMenu-container {
         display: block; 
-        transition: none;        
+        animation: none !important;        
         @include visibility-visible;
     }
 }

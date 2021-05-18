@@ -39,8 +39,11 @@ h6, .h6 {
 }
 .section-heading-container {
   position: relative;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;   
   @media (min-width: 768px) {
     margin-bottom: 40px;
   }
+}
+.container > .section-heading-container {
+  @include top-spacing;  
 }

@@ -911,6 +911,18 @@
             }
         }
     }
+    .block-text_with_html {
+        .block-item-inner {
+            @include custom-width;
+            .text-1 {
+                font-size: 30px;
+                line-height: 36px;
+                font-weight: 700;
+                margin-bottom: 9px;
+                @include font-heading;
+            }
+        }
+    }
 }
 
 /* Custom page */
