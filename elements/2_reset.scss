@@ -347,6 +347,12 @@ textarea {
     } 
 }
 .templateCaptcha {
+    .main-content {
+        margin-top: 35px;        
+        @media (min-width: 768px) {        
+          margin-top: 65px;
+        }
+      }
     .shopify-challenge__button.btn {
         display: flex;
         align-items: center;
@@ -721,29 +727,28 @@ img {
         }          
     }
     .collection-title {
-        padding: 24px;
-        width: 100%;
+        padding: 14px 24px;        
         text-align: center;
         font-size: 22px;
         letter-spacing: 0.2em;
         text-transform: uppercase;        
         font-family: var(--ff-heading);
-        transform: translate(-50%, -50%);
-        @include ab(50%, 50%, n, 0);                
+        background: rgba(0, 0, 0, .15);
+        transform: translate(0, -50%);
+        @include ab(50%, 15px, n, 15px);                
         strong {
             font-weight: 500;
         }
+        a {
+            color: #fff;
+        }
         @media (min-width: 641px) {
-            top: auto;
-            left: 15px;
+            top: auto;            
             bottom: 40px;
             transform: none;
-            padding: 0 40px;
+            padding-left: 40px;
+            padding-right: 40px;
             text-align: left;
-        }
-        @media (min-width: 1240px) {
-            bottom: 50px;
-            padding: 0 40px;
         }        
     }
     @media (hover : hover) {
@@ -796,4 +801,7 @@ img {
     @media (min-width: 768px) {
         display: block;
     }
+}
+.stamped-badge-caption {
+    display: none;
 }

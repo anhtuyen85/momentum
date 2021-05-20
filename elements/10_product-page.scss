@@ -371,4 +371,207 @@
         }
     }
 }
+#productStrapDialog,
+#productEngravDialog {
+    display: none;
+    .drawer-close-ui {
+        @include black-bg; 
+    }
+    > div {
+        &:not(.drawer-close-ui) {
+            @include fixed(50%, 50%, n, n);
+            background: var(--popup-bg-color);
+            max-height: 95vh;
+            overflow: hidden;
+            overflow-y: auto;
+            transform: translate(-50%, -50%);
+            width: calc(100% - 30px);                        
+            z-index: layer(popup-content);            
+        }
+    }   
+    .dialog-body {
+        > h3 {
+            text-align: center;
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 50px;
+            @media (min-width: 768px) {
+                margin-bottom: 80px;
+            }
+        }
+    }
+}
+#productEngravDialog {
+    > div {
+        &:not(.drawer-close-ui) {
+            max-width: 720px;      
+            padding: 30px 5vw;
+            @media (min-width: 768px) {
+                padding: 60px 80px;
+            }
+        }
+    }
+    .dialog-body {
+        color: var(--body-color);
+        > h3 {           
+            margin-bottom: 33px;            
+        }
+    }
+    .customfields-font {
+        p {
+            margin: 0 0 8px;
+        }
+    }
+    .customfields-font-group {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;        
+        input[type="radio"] {
+            display: none;
+        }
+        label {
+            margin: 0 0 15px;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            color: var(--btn2-cl);
+            background: var(--btn2-bg-cl);                    
+            border: 1px solid var(--btn2-border-cl);
+            font-weight: 700;
+            @include font-heading;       
+            @media (min-width: 550px) {
+                width: calc(50% - 20px);
+            }
+        }
+        input[type="radio"]:checked + label {
+            color: var(--btn2-hover-cl);
+            background: var(--btn2-hover-bg-cl);
+            border-color: var(--btn2-hover-border-cl);
+        }
+    }
+    .customfields-characters {
+        p {
+            margin: 3px 0 7px;
+        }       
+    }
+    .customfields-characters-group {
+        margin-bottom: 10px;
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 9px;
+            border-radius: 0;
+            height: 46px;
+            font-size: calc(var(--body-font-size) - 6px);
+            text-align: right;
+            letter-spacing: .15em;
+            padding-right: 50px;
+        }
+    }
+    .customfields-submit {
+        text-align: center;
+        .btn {
+            width: 100%;
+            font-weight: 500;
+            font-size: 12px;
+            @include font-custom;
+        }
+        small {
+            font-size: calc(var(--body-font-size) - 7px);            
+        }
+    }
+}
+#productStrapDialog {
+    display: none;
+    .drawer-close-ui {
+        @include black-bg; 
+    }
+    > div {
+        &:not(.drawer-close-ui) {            
+            max-width: 1575px;
+            padding: 70px 5vw 50px;
+            @media (min-width: 1600px) {
+                padding: 80px 120px;
+            }
+        }
+    }    
+    .dialog-body {
+        > h3 {           
+            margin-bottom: 50px;
+            @media (min-width: 768px) {
+                margin-bottom: 80px;
+            }
+        }
+    }
+    .btn-popup-close {
+        padding: 0;
+        @include ab(20px, n, n, 20px);
+        @media (min-width: 768px) {
+            top: 40px;
+            right: 40px;
+        }
+        .svg__ui {
+            display: block;
+            svg {
+                width: 21px;
+                height: 21px;
+            }
+        }
+    }   
+    .product-card {
+        margin-bottom: 30px;
+        @media (min-width: 768px) {
+            margin-bottom: 70px;
+        }
+        .product-card__title {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+        .product-price {
+            @include font-custom;
+            letter-spacing: 0;
+            font-weight: 800;
+            line-height: 20px;
+            font-size: calc(var(--card-price) - 2px);
+            .price-compare {
+                font-size: calc(var(--card-price-compare) - 2px);
+            }
+        }
+        .product-cart-form {
+            margin-top: 30px;            
+            form {
+                text-align: center;
+            }
+            .btn {
+                font-size: calc(var(--body-font-size) - 4px);
+                padding-left: 10px;
+                padding-right: 10px;
+                width: 100%;
+                max-width: 165px;
+                text-align: center;
+            }
+        }
+    }
+}
+.show-strap-popup {
+    #productStrapDialog {
+        &[data-control="show-strap-popup"] {
+            display: block;
+            .drawer-close-ui {
+                @include black-bg-open;  
+            }
+        }        
+    }
+}
+.show-engrav-popup {
+    #productEngravDialog {        
+        &[data-control="show-engrav-popup"] {
+            display: block;
+            .drawer-close-ui {
+                @include black-bg-open;  
+            }
+        }        
+    }
+}
 /* end product page */

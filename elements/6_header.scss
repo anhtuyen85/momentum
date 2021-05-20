@@ -294,6 +294,11 @@ header {
                             svg path {
                                 stroke: var(--header-nav-hover-color);
                             } 
+                            &.btn-currencies {                              
+                                svg path {                          
+                                    fill: var(--header-nav-hover-color); 
+                                } 
+                            }       
                         }
                         > .dropdown-listing  {
                             display: block;
@@ -544,9 +549,9 @@ header {
     .collection-title--style-overlay {
         position: relative;
         .collection-info {
-            padding: 0 15px;
+            padding: 0 24px;
             text-align: left;
-            @include ab(6px, 9px, n, n);
+            @include ab(6px, 0, n, n);
             a {
                 color: #fff;
                 text-transform: uppercase;
