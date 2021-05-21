@@ -169,6 +169,18 @@
     }
     .btn {
         margin-top: 20px;
+    }    
+}
+.section-bottom-link {
+    margin-top: 25px;
+    @media (min-width: 768px) {
+        margin-top: 30px;
+    }
+    a {
+        display: inline-block;
+        line-height: 21.47px;
+        letter-spacing: .1em;
+        font-size: calc(var(--body-font-size) - 2px);
     }
 }
 .home-gallery-grid {
@@ -381,7 +393,7 @@
             margin-bottom: 30px;
         }
     }
-    .release-info {
+    .category-name {
         font-size: calc(var(--body-font-size) - 4px); 
         font-weight: 700;
         line-height: 19.54px;        
