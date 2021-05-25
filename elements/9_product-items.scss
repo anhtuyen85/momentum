@@ -184,17 +184,7 @@
 		justify-content: center;
 	}
 	.product-card__title {
-		font-size: calc(var(--card-title) - 6px); 
-		line-height: calc(var(--card-title) - 6px);
-		font-weight: var(--body-font-weight); 
-		margin: 0 0 13px;
-		font-weight: 700;
-		@include font-heading;
-		@media (min-width: 768px) {
-			margin-bottom: 16px;
-			font-size: var(--card-title); 
-			line-height: var(--card-title);
-		}
+		@include product-title;
 	}
 	.spr-badge {
 		margin: 0 0 7px;

@@ -96,6 +96,19 @@
         border-radius: 5px;
     }
 }
+@mixin product-title {
+    font-size: calc(var(--card-title) - 6px); 
+    line-height: calc(var(--card-title) - 6px);
+    font-weight: var(--body-font-weight);                             
+    font-weight: 700;    
+    margin-bottom: 13px;  
+    @include font-heading;                      
+    @media (min-width: 768px) {                                
+        font-size: var(--card-title); 
+        line-height: var(--card-title);
+        margin-bottom: 25px;
+    }   
+}
 @mixin black-bg {
     @include fixed(0, 0, 0, 0);
     background: rgba(0, 0, 0, 0.5);  
@@ -128,6 +141,18 @@
     @media (min-width: 768px) {
         margin-bottom: 64px;
         margin-top: 65px;
+    }
+}
+@mixin main-top-spacing {
+    margin-top: 35px;        
+    @media (min-width: 768px) {        
+        margin-top: 65px;
+    }
+}
+@mixin main-bt-spacing {
+    margin-bottom: 55px;        
+    @media (min-width: 768px) {        
+        margin-bottom: 120px;
     }
 }
 %transition-img {

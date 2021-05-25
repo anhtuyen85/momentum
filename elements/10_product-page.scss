@@ -350,9 +350,26 @@
     img {
         max-height: 100%;
         height: auto;
+    }   
+    .mww-subheading {
+        margin-bottom: 7px;
+        font-size: calc(var(--body-font-size) - 4px);
+        line-height: 19.54px;
+        letter-spacing: 0.18em;   
+        font-weight: 700;      
+        text-transform: uppercase;   
     }
+    .mww-heading {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        margin-bottom: 9px;
+        @include font-heading;
+    }    
     h5, p {
         @include custom-width;
+        margin-top: 0;
+        margin-bottom: 0;
         &:empty {
             display: none;
         }

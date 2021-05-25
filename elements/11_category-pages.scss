@@ -28,6 +28,18 @@
     .section_content-body {
         margin-bottom: 25px;
     }
+    #col-main {
+        > .row {
+            @media (max-width: 767px) {
+                margin-left: -10px;
+                margin-right: -10px;
+                .product-section {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
 }
 .filter-sidebar--active {
     overflow: hidden; 
@@ -64,6 +76,7 @@
         }
         .filter-icon {
             margin-right: 16.21px;
+            display: flex;
             @media (min-width: 768px) {
                 margin-right:  52.5px;
             }
@@ -438,5 +451,84 @@
             }
         }
     }
+}
+.home-filter-page  {
+    @include main-bt-spacing;
+    .progress-bar {
+        position: relative;
+        max-width: 570px;
+        margin: 80px auto;  
+        padding: 0 15px;      
+        .progress-value {
+            background: #F2F2F4;
+            height: 10px;
+            width: 100%;
+        }
+        .progress-percent {
+            @include ab(0, 0, n, n);
+            height: 100%;
+            background: var(--btn1-bg-cl);
+        }
+    }
+    .mm-step {
+        position: relative;       
+        &.step-1 {
+            .text-content {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                h1 {
+                    color: #fff;
+                    font-size: 36px;
+                    line-height: 29.91px;
+                    letter-spacing: -1px;
+                    margin-bottom: 40px;
+                    @media (min-width: 768px) {
+                        font-size: 60px;
+                        line-height: 59.46px;
+                    }
+                }
+                .btn {                    
+                    padding: 17px 15px;
+                    width: 100%;
+                    max-width: 336px;
+                    font-size: calc(var(--body-font-size) - 4px);
+                    font-weight: 500;
+                    letter-spacing: 0;
+                    @include font-custom;
+                }
+            }
+        } 
+        .step-heading {
+            text-align: center;
+            margin: 60px auto;
+            font-size: 36px;
+            line-height: 35.68px;
+            letter-spacing: -1.5px;
+        }
+    }   
+    .filter-item {
+        margin-bottom: 40px;
+        text-align: center;
+        > button {
+            position: relative;
+            display: block;
+            cursor: pointer;
+            .filter-name {
+                color: #fff;
+                font-size: 30px;
+                line-height: 36px;
+                font-weight: 700;
+                padding: 40px 30px;
+                @include font-heading;
+            }
+        }
+        .filter-description {
+            padding: 23px 0 0;
+            p {
+                margin: 0;
+            }
+        }
+    } 
 }
 /* End Category page */
