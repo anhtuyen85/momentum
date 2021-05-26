@@ -180,9 +180,7 @@
                     }
                 }  
                 .dropdown-listing {
-                    max-height: 0;
-                    overflow: hidden;
-                    transition: max-height 0.15s ease-in-out;       
+                    @include max-height-zero;     
                 }
                 &.active {                    
                     .dropdown-icon--close {
@@ -192,8 +190,7 @@
                         display: none;
                     }
                     .dropdown-listing {
-                        transition: max-height 0.35s ease-in-out;
-                        max-height: 100%;
+                        @include max-height-full;
                     }
                 } 
             }
@@ -452,21 +449,31 @@
         }
     }
 }
-.home-filter-page  {
-    @include main-bt-spacing;
-    .progress-bar {
-        position: relative;
+.home-filter-page  {    
+    .progress-bar-container {
+        padding: 0 15px;
         max-width: 570px;
-        margin: 80px auto;  
-        padding: 0 15px;      
-        .progress-value {
-            background: #F2F2F4;
-            height: 10px;
+        margin: 80px auto; 
+        display: flex;
+        align-items: center;
+        &:after {                
+            font-size: calc(var(--body-font-size) - 4px);
+            line-height: 21.82px;      
+            margin-left: 12px;          
+        }
+    }
+    .progress-bar {
+        position: relative;   
+        width: 100%;  
+        .progress-value {            
             width: 100%;
+            background: #F2F2F4;
+            height: 10px;   
         }
         .progress-percent {
-            @include ab(0, 0, n, n);
-            height: 100%;
+            @include ab(50%, 0, n, n);
+            transform: translateY(-50%);
+            height: 10px;
             background: var(--btn1-bg-cl);
         }
     }
@@ -501,12 +508,18 @@
         } 
         .step-heading {
             text-align: center;
-            margin: 60px auto;
+            margin: 0 auto 60px;
             font-size: 36px;
             line-height: 35.68px;
             letter-spacing: -1.5px;
         }
     }   
+    .group-tags {
+        margin-bottom: 40px;        
+        @media (min-width: 768px) {        
+            margin-bottom: 90px;
+        }
+    }
     .filter-item {
         margin-bottom: 40px;
         text-align: center;
@@ -530,5 +543,81 @@
             }
         }
     } 
+}
+.section-inner {
+    @include max-height-zero;
+    .mm-step {
+        @include max-height-zero;
+    }
+}
+.section-inner[data-current-step="1"] {
+    @include max-height-full;
+    .progress-bar-container {
+        &:after {
+            content: "20%";
+        }
+        .progress-percent {
+            width: 20%;
+        }
+    }
+    .mm-step[data-step="1"] {
+        @include max-height-full;
+    }
+}
+.section-inner[data-current-step="2"] {
+    @include max-height-full;
+    .progress-bar-container {
+        &:after {
+            content: "40%";
+        }
+        .progress-percent {
+            width: 40%;
+        }
+    }
+    .mm-step[data-step="2"] {
+        @include max-height-full;
+    }
+}
+.section-inner[data-current-step="3"] {
+    @include max-height-full;
+    .progress-bar-container {
+        &:after {
+            content: "60%";
+        }
+        .progress-percent {
+            width: 60%;
+        }
+    }
+    .mm-step[data-step="3"] {
+        @include max-height-full;
+    }
+}
+.section-inner[data-current-step="4"] {
+    @include max-height-full;
+    .progress-bar-container {
+        &:after {
+            content: "80%";
+        }
+        .progress-percent {
+            width: 80%;
+        }
+    }
+    .mm-step[data-step="4"] {
+        @include max-height-full;
+    }
+}
+.section-inner[data-current-step="5"] {
+    @include max-height-full;
+    .progress-bar-container  {
+        &:after {
+            content: "100%";
+        }
+        .progress-percent {
+            width: 100%;
+        }
+    }
+    .mm-step[data-step="5"] {
+        @include max-height-full;
+    }
 }
 /* End Category page */

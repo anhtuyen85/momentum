@@ -918,9 +918,7 @@ header {
                 } 
             }
             .link-child-dropdown {                
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.15s ease-in-out;    
+                @include max-height-zero;  
                 .dropdown-menu {
                     > {
                         padding: 0 50px;
@@ -938,8 +936,7 @@ header {
                     }
                 } 
                 >.link-child-dropdown {
-                    transition: max-height 0.35s ease-in-out;
-                    max-height: 100%;
+                    @include max-height-full;
                 }
             }
             &:not(.dropdown) {

@@ -155,6 +155,29 @@
         margin-bottom: 120px;
     }
 }
+@mixin max-height-zero {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s ease-in-out; 
+}
+@mixin max-height-full {
+    transition: max-height 0.35s ease-in-out;
+    max-height: 100%;
+}
+@mixin subheading {
+    font-size: calc(var(--body-font-size) - 0.4px);
+    text-transform: uppercase;
+    line-height: 20px;
+    font-weight: 700;            
+    letter-spacing: 0.18em;
+    @include font-heading;  
+}
+@mixin heading {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;                
+    @include font-heading;
+}
 %transition-img {
     transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);       
 }

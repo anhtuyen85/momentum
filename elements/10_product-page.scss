@@ -353,18 +353,11 @@
     }   
     .mww-subheading {
         margin-bottom: 7px;
-        font-size: calc(var(--body-font-size) - 4px);
-        line-height: 19.54px;
-        letter-spacing: 0.18em;   
-        font-weight: 700;      
-        text-transform: uppercase;   
+        @include subheading;  
     }
     .mww-heading {
-        font-size: 30px;
-        font-weight: 700;
-        line-height: 36px;
-        margin-bottom: 9px;
-        @include font-heading;
+        @include heading;
+        margin-bottom: 9px;        
     }    
     h5, p {
         @include custom-width;
