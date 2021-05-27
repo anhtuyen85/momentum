@@ -337,8 +337,7 @@
                 letter-spacing: 0.18em;
                 font-size: 16px;
                 font-weight: 700;        
-                color: #fff;    
-                @include font-heading;
+                color: #fff;                    
             }
             @media (min-width: 768px) {
                 text-align: left;
@@ -392,6 +391,7 @@
         margin: 0 0 8px;
         letter-spacing: 0.18em;
         text-transform: uppercase;
+        @include font-body;
         @media (min-width: 768px) {
             margin-bottom: 13px;
         }

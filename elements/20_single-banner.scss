@@ -35,6 +35,11 @@
             }
         }
     }      
+    .block-item {
+        &:not(:first-child) {
+            display: none;
+        }
+    }
 }
 .sectionstatic-bottom-banner {
     margin-top: 55px; 
@@ -101,7 +106,7 @@
         font-weight: 500;
         line-height: 24px;
         @media (min-width: 768px) {
-            @include font-heading;
+            @include font-body;
             font-weight: 700;
             font-size: 30px;    
             line-height: 36px;

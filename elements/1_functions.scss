@@ -165,12 +165,12 @@
     max-height: 100%;
 }
 @mixin subheading {
-    font-size: calc(var(--body-font-size) - 0.4px);
+    font-size: calc(var(--body-font-size) - 4px);
     text-transform: uppercase;
     line-height: 20px;
     font-weight: 700;            
     letter-spacing: 0.18em;
-    @include font-heading;  
+    @include font-body;  
 }
 @mixin heading {
     font-weight: 700;

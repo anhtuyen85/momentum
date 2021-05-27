@@ -878,13 +878,9 @@
         .small-text {
             padding: 40px 60px;
             width: 100%;            
-            pointer-events: none;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            font-size: 16px;
-            font-weight: 700;        
-            color: #fff;    
-            @include font-heading;
+            pointer-events: none;                  
+            color: #fff;  
+            @include subheading;              
             @media (min-width: 768px) {
                 text-align: left;
             }
