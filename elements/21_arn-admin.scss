@@ -5,3 +5,10 @@
         @include visibility-visible;
     }
 }
+.shopify-section[data-shopify-editor-section] .section-inner .mm-step {    
+    transform: scale(1);
+}
+.section-inner .mm-step[data-shopify-editor-block] {
+    transition: none !important;     
+    transform: scale(1);
+}

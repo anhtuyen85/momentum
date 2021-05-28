@@ -450,16 +450,20 @@
     }
 }
 .home-filter-page  {    
+    position: relative;
     .progress-bar-container {
         padding: 0 15px;
         max-width: 570px;
-        margin: 80px auto; 
+        margin: 50px auto; 
         display: flex;
         align-items: center;
         &:after {                
             font-size: calc(var(--body-font-size) - 4px);
             line-height: 21.82px;      
             margin-left: 12px;          
+        }
+        @media (min-width: 768px) {
+            margin: 80px auto; 
         }
     }
     .progress-bar {
@@ -509,16 +513,29 @@
         } 
         .step-heading {
             text-align: center;
-            margin: 0 auto 60px;
-            font-size: 36px;
+            margin: 0 auto 40px;
+            font-size: 30px;
             line-height: 35.68px;
             letter-spacing: -1.5px;
+            @media (min-width: 768px) {
+                margin-bottom: 60px;
+            }
         }
     }   
     .group-tags {
         margin-bottom: 40px;        
         @media (min-width: 768px) {        
             margin-bottom: 90px;
+        }
+        &.row {
+            @media (max-width: 767px) {
+                margin-left: -10px;
+                margin-right: -10px;
+                > div {
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+            }
         }
     }
     .filter-item {
@@ -545,17 +562,47 @@
         }
     } 
 }
-.section-inner {
-    @include max-height-zero;
+.section-inner {    
     .mm-step {
-        @include transition;
-        @include max-height-zero;
-        zoom: 0.25;                
-        
+        @include ab(135px, 0, n, n);
+        transition: all 0.15s ease-in-out 0s;       
+        width: 100%;        
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(0);                
+        @media (min-width: 768px) {
+            top: 195px;
+        }
+    }
+    .step-subheading,
+    .no-products {
+        text-align: center;
+    }
+    .no-products {
+        width: 100%;        
+    }
+    .return-step-button {
+        margin-bottom: 50px;
+        @media (min-width: 768px) {
+            margin-bottom: 80px;
+        }
+        .btn {                    
+            padding-left: 35px;                        
+            padding-right: 35px;
+            font-size: calc(var(--body-font-size) - 6px);
+            font-weight: 500;
+            letter-spacing: 0;
+            @include font-custom;
+        }
+    }
+    .product-card {
+        margin-top: 35px;
+        @media (min-width: 768px) {
+            margin-top: 70px;
+        }
     }
 }
-.section-inner[data-current-step="0"] {
-    @include max-height-full;
+.section-inner[data-current-step="0"] {    
     .progress-bar-container {
         display: none;
         &:after {
@@ -565,44 +612,47 @@
             width: 20%;
         }
     }
-    .mm-step[data-step="0"] {
-        @include max-height-full;
-        zoom: 1;
+    .mm-step[data-step="0"] {       
+        @include step-effect;
     }
 }
-.section-inner[data-current-step="1"] {
-    @include max-height-full;
-    .mm-step[data-step="1"] {
-        @include max-height-full;
-        zoom: 1;
+.section-inner[data-current-step="1"] {    
+    .mm-step[data-step="1"] {       
+        @include step-effect;
     }
 }
-.section-inner[data-current-step="2"] {
-    @include max-height-full;
+.section-inner[data-current-step="2"] {    
     .mm-step[data-step="2"] {
-        @include max-height-full;
-        zoom: 1;
+        @include step-effect;
     }
 }
 .section-inner[data-current-step="3"] {
-    @include max-height-full;
     .mm-step[data-step="3"] {
-        @include max-height-full;
-        zoom: 1;
+        @include step-effect;
     }
 }
 .section-inner[data-current-step="4"] {
-    @include max-height-full;   
     .mm-step[data-step="4"] {
-        @include max-height-full;
-        zoom: 1;
+        @include step-effect;
     }
 }
-.section-inner[data-current-step="5"] {
-    @include max-height-full;   
+.section-inner[data-current-step="5"] {     
     .mm-step[data-step="5"] {
-        @include max-height-full;
-        zoom: 1;
+        @include step-effect;
+    }
+}
+[data-step]:last-child .result-container:empty {
+    min-height: 50vh;
+    &:before {
+        content: "";
+        @include ab(0, 0, 0, 0);   
+        margin: auto;
+        background: var(--body-link-hover);               
+        width: 100px; 
+        height: 100px;
+        animation: fa-spin 2s infinite linear;    
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='spinner' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg'%3E%3Cpath d='M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z' class=''%3E%3C/path%3E%3C/svg%3E"); 
+        mask-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='spinner' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' class='svg-inline--fa fa-spinner fa-w-16 fa-spin fa-lg'%3E%3Cpath d='M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z' class=''%3E%3C/path%3E%3C/svg%3E");  
     }
 }
 /* End Category page */
