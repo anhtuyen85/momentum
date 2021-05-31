@@ -418,15 +418,27 @@ img {
         border: 2px solid var(--main-color);
         border-radius: 50%;        
         &.slide_ui-btn-prev {
-            @include ab(40%, 40px, n, n);
-            @media (min-width: 1100px) {
-                left: -43px;
+            @include ab(40%, -15px, n, n);
+            @media (min-width: 768px) {
+                left: calc(-2.5vw - 15px);
+            }
+            @media (min-width: 1400px) {
+                left: calc(calc(-1 * (100vw - 1400px) / 2) + 5px);    
+            }
+            @media (min-width: 1550px) {
+                left: -50px;
             }
         }
         &.slide_ui-btn-next {
-            @include ab(40%, n, n, 40px); 
-            @media (min-width: 1100px) {
-                right: -43px; 
+            @include ab(40%, n, n, -15px); 
+            @media (min-width: 768px) {
+                right: calc(-2.5vw - 15px);
+            }
+            @media (min-width: 1400px) {
+                right: calc(calc(-1 * (100vw - 1400px) / 2) + 5px); 
+            }           
+            @media (min-width: 1550px) {
+                right: -50px;
             }
         }
         svg {

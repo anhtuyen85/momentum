@@ -446,9 +446,10 @@
             width: 100%;
             padding: 10px;
             cursor: pointer;
-            color: var(--btn2-cl);
-            background: var(--btn2-bg-cl);                    
-            border: 1px solid var(--btn2-border-cl);
+            color: var(--btn2-hover-cl);
+            background: var(--btn2-hover-bg-cl);
+            border: 1px solid var(--btn2-hover-border-cl);
+            
             font-weight: 700;
             @include font-heading;       
             @media (min-width: 550px) {
@@ -456,9 +457,9 @@
             }
         }
         input[type="radio"]:checked + label {
-            color: var(--btn2-hover-cl);
-            background: var(--btn2-hover-bg-cl);
-            border-color: var(--btn2-hover-border-cl);
+            color: var(--btn2-cl);
+            background: var(--btn2-bg-cl);                    
+            border-color: var(--btn2-border-cl);
         }
     }
     .customfields-characters {

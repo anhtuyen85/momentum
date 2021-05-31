@@ -394,4 +394,7 @@
         }
     }
 }
+#shopify-section-static-top-banner + #shopify-section-blog-template {
+    @include main-top-spacing;
+}
 /* End blog post page */

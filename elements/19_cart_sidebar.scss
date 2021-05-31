@@ -134,6 +134,15 @@
             line-height: 36px;
         }
     }
+    .line-item-properties {
+        margin: 0;
+        small {
+            font-size: 12px;
+            line-height: 20px;
+            text-transform: uppercase;
+            @include font-custom;
+        }
+    }
     .line-item-options {
         p {
             margin: 0 0 20px;

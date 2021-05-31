@@ -952,5 +952,7 @@
         }
     }
 }
-
+.shopify-policy__title {
+    @include top-spacing;
+}
 /* Custom page */
