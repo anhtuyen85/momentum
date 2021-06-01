@@ -449,6 +449,101 @@
         }
     }
 }
+/* Promo */
+.collection-metafield--promo {
+    margin-bottom: 35px;
+    @media (min-width: 768px) {
+        margin-bottom: 70px;
+    }
+}
+.promo-inner {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    @include transition;   
+    .promo-banner {
+        height: 100%;
+        img {
+            @extend %transition-img;
+            object-fit: cover;
+            min-height: 100%;
+        }
+    }
+    @media (hover : hover) {
+        &:hover {
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);                
+            img {
+                transform: scale(1.2);
+            }
+        }       
+    }  
+}
+.promo-content {
+    padding: 38px 20px;    
+    right: 0;
+    bottom: 0;
+    text-align: center;   
+    @media (min-width: 1200px) {
+        padding: 47px 35px;        
+    }
+    p {
+        margin: 0;
+    }
+    .promo-heading {
+        font-size: calc(var(--body-font-size) + 1px);
+        font-weight: 400;
+        line-height: 28.79px;
+        font-family: 'DM Serif Display', serif;
+        max-width: 840px;
+        @media (min-width: 768px) {
+            @include heading;
+        }
+        + .promo-button {
+            margin-top: 18px;
+        }
+    }
+    .promo-subheading {
+        font-size: calc(var(--body-font-size) + 6px);
+        line-height: 31.02px;
+        margin: 22px auto;
+        max-width: 840px;
+        + .promo-button {
+            margin-top: 18px;
+        }
+    }
+    .promo-button {  
+        line-height: 19.54px;     
+        max-width: 840px; 
+        a {
+            letter-spacing: 0.18em;
+            font-size: calc(var(--body-font-size) - 4px);
+            line-height: 19.54px;
+            font-weight: 700;                      
+        }
+    }
+}
+.promo-style-1 {
+    .promo-inner {
+        &:after {
+            content: '';
+            border: 2px solid #fff;
+            pointer-events: none;
+            @include ab(12px, 12px, 12px, 12px);
+            @media (min-width: 1200px) {
+                @include ab(25px, 25px, 25px, 25px);
+            }
+        }
+    }    
+}
+.promo-style-2 {   
+    .promo-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/* End Promo */
 .home-filter-page  {    
     position: relative;
     .progress-bar-container {

@@ -118,7 +118,7 @@
                         height: 4px;
                         border-radius: 50%;
                         background: var(--body-link-hover);
-                        @include ab(12px, 5px, n, n);
+                        @include ab(50%, 5px, n, n);
                     }
                 }
             }
@@ -448,8 +448,7 @@
             cursor: pointer;
             color: var(--btn2-hover-cl);
             background: var(--btn2-hover-bg-cl);
-            border: 1px solid var(--btn2-hover-border-cl);
-            
+            border: 1px solid var(--btn2-hover-border-cl);            
             font-weight: 700;
             @include font-heading;       
             @media (min-width: 550px) {
@@ -461,7 +460,7 @@
             background: var(--btn2-bg-cl);                    
             border-color: var(--btn2-border-cl);
         }
-    }
+    }    
     .customfields-characters {
         p {
             margin: 3px 0 7px;
