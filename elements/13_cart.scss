@@ -1,4 +1,7 @@
 /* Cart page */
+.cart-empty {
+    @include main-top-spacing;
+}
 .cart-section {
     .cart-table {
         display: block;

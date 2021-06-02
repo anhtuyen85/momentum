@@ -544,6 +544,7 @@
             font-weight: 800;
             line-height: 20px;
             font-size: calc(var(--card-price) - 2px);
+            justify-content: center;
             .price-compare {
                 font-size: calc(var(--card-price-compare) - 2px);
             }

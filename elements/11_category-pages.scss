@@ -276,6 +276,13 @@
        background-size: cover;
        position: relative;
        .collection-header-banner {
+           position: relative;
+           &:after {
+               content: '';
+               background: rgba(0, 0, 0, .4);
+               pointer-events: none;
+               @include ab(0, 0, 0, 0);
+           }
            + .collection-header-content {  
                 padding: 64px 0 54px;                                    
                 @media (min-width: 992px) {
@@ -515,10 +522,21 @@
         line-height: 19.54px;     
         max-width: 840px; 
         a {
-            letter-spacing: 0.18em;
-            font-size: calc(var(--body-font-size) - 4px);
-            line-height: 19.54px;
-            font-weight: 700;                      
+            &:not(.btn) {
+                letter-spacing: 0.18em;
+                font-size: calc(var(--body-font-size) - 4px);
+                line-height: 19.54px;
+                font-weight: 700;  
+                color: #fff;
+                text-transform: uppercase;
+                border-bottom: 2px solid currentColor;
+                @media (hover : hover) {
+                    &:hover {
+                        color: var(--body-link-hover);
+                        border-bottom-color: var(--body-link-hover);
+                    }
+                }
+            }
         }
     }
 }
@@ -539,8 +557,15 @@
     .promo-content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        @media (min-width: 768px) {
+            justify-content: center;
+            align-items: center;
+        }
+        .promo-subheading {
+            @media (max-width: 767px) {
+                margin-top: auto;
+            }
+        }
     }
 }
 /* End Promo */
