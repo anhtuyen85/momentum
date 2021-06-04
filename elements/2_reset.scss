@@ -261,7 +261,7 @@ input {
     height: 56px;    
     font-size: calc(var(--body-font-size) - 6px);  
     text-transform: uppercase;    
-    font-family: 'Sackers Gothic Std';    
+    @include font-custom;
 }
 textarea {
     max-width: 100%;
