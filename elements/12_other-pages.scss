@@ -890,10 +890,10 @@
         display: flex;
         align-items: center;
         .block-item-inner {
-            padding: 46px 0 0;
+            // padding: 46px 0 0;
            @include custom-width;
            @media (min-width: 768px) {
-            padding: 46px 0;
+            // padding: 46px 0;
            }
            p {
                 margin: 0;
@@ -993,3 +993,51 @@
     @include top-spacing;
 }
 /* Custom page */
+/* Instagram */
+div.shopify-section > .text-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    > p {
+        margin: 0;
+        > a {
+            font-size: calc(var(--body-font-size) - 2px);
+            letter-spacing: 1px;
+        }
+    }
+}
+#insta-feed {
+    margin-left: -7.5px !important;
+    margin-right: -7.5px !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    @media (min-width: 768px) {
+        margin-left: -15px !important;
+        margin-right: -15px !important;
+    }
+    h2 {
+        font-family: var(--ff-heading) !important;    
+        margin-bottom: 40px !important;
+    }
+    .instafeed-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        @media (min-width: 768px) {
+            padding-left: 7.5px !important;
+            padding-right: 7.5px !important;
+        }
+        img,
+        .instafeed-overlay {
+            width: calc(100% - 15px) !important;
+            height: calc(100% - 15px) !important;
+            left: 7.5px !important;
+            right: 7.5px !important;
+            @media (min-width: 768px) {
+                width: calc(100% - 30px) !important;
+                height: calc(100% - 30px) !important;
+                left: 15px !important;
+                right: 15px !important;
+            }
+        }         
+    }
+}

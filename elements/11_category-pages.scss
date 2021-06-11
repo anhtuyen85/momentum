@@ -232,6 +232,9 @@
                         margin: 0 auto;
                         padding: 0;
                         line-height: 18.51px;
+                        &.empty-range-value {
+                            display: none;
+                        }
                         &:after, &:before {
                             content: none;
                         }

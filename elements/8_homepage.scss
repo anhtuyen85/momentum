@@ -415,13 +415,30 @@
 }
 /* End Section Feature Blog Slide */
 /* Instagram */
+div.shopify-section > .text-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    > p {
+        margin: 0;
+        > a {
+            font-size: calc(var(--body-font-size) - 2px);
+            letter-spacing: 1px;
+        }
+    }
+}
 #insta-feed {
     margin-left: -7.5px !important;
     margin-right: -7.5px !important;
     width: auto !important;
+    margin-top: 0 !important;
     @media (min-width: 768px) {
         margin-left: -15px !important;
         margin-right: -15px !important;
+    }
+    h2 {
+        font-family: var(--ff-heading) !important;    
+        margin-bottom: 40px !important;
     }
     .instafeed-container {
         padding-left: 15px !important;
