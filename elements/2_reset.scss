@@ -260,8 +260,7 @@ input, textarea {
 input {
     height: 56px;    
     font-size: calc(var(--body-font-size) - 6px);  
-    text-transform: uppercase;    
-    @include font-custom;
+    text-transform: uppercase;        
 }
 textarea {
     max-width: 100%;
@@ -378,7 +377,7 @@ img {
 .quantity-product input[type="number"] {
     -moz-appearance: textfield;
 }
-.overlayUI {
+.overlayUI, .overlay-ui {
     @include ab(0, 0, n, n);
 } 
 .f-break {

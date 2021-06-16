@@ -44,7 +44,15 @@
         background-position: center;
     }
     .block-content-inner {
-        @include ab(0, 0, n, n);
+        @include ab(0, 0, n, n);        
+        @media (min-width: 992px) {
+            padding-left: 60px;
+            padding-right: 60px;
+        }       
+        @media (min-width: 1530px) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
     .block-content {
         @include ab(0, 0, 0, 0);        
@@ -96,10 +104,10 @@
             stroke: #fff;
         }
         &.slide_ui-btn-prev {
-            left: 0;
+            left: 15px;
         }
         &.slide_ui-btn-next {
-            right: 0;
+            right: 15px;
         }
     }
 }
