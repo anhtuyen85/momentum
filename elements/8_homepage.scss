@@ -159,7 +159,8 @@
         @include ab(0, 50%, n, n);
         transform: translateX(-50%);
         padding: 40px 60px;
-        width: 100%;            
+        width: 100%;     
+        pointer-events: none;       
         @media (min-width: 768px) {
             left: 0;                
             transform: translateX(0);
@@ -423,17 +424,24 @@
 }
 /* End Section Feature Blog Slide */
 /* Instagram */
-div.shopify-section > .text-center {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-    > p {
-        margin: 0;
-        > a {
-            font-size: calc(var(--body-font-size) - 2px);
-            letter-spacing: 1px;
+div.shopify-section {
+    > .text-center {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        > p {
+            margin: 0;
+            > a {
+                font-size: calc(var(--body-font-size) - 2px);
+                letter-spacing: 1px;
+            }
         }
-    }
+    } 
+    > svg {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 15px;
+    }   
 }
 #insta-feed {
     margin-left: -7.5px !important;

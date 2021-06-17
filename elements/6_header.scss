@@ -791,6 +791,17 @@ header {
         }
     }
 }     
+.mega-shop-all {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: right;
+    padding: 9px 0 0;
+    a {
+        text-transform: uppercase;
+        font-size: calc(var(--body-font-size) - 2px);
+        @include font-heading;   
+    }
+}
 .mobile-menu-show {
     overflow: hidden;     
     .hamburger-show {

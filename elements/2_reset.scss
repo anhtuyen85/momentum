@@ -719,6 +719,12 @@ img {
     }
 }
 /* Collections List */
+#collections-listing .collection-item {
+    @media (max-width: 575px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 .collection-item {
     margin: 0 0 30px;
     position: relative;
@@ -734,13 +740,13 @@ img {
     .collection-title {
         padding: 14px 24px;        
         text-align: center;
-        font-size: 22px;
+        font-size: 16px;
         letter-spacing: 0.2em;
         text-transform: uppercase;        
         font-family: var(--ff-heading);
         background: rgba(0, 0, 0, .5);
         transform: translate(0, -50%);
-        @include ab(50%, 15px, n, 15px);                
+        @include ab(50%, 15px, n, 15px);                        
         strong {
             font-weight: 500;
         }
@@ -754,6 +760,7 @@ img {
             padding-left: 40px;
             padding-right: 40px;
             text-align: left;
+            font-size: 22px;
         }        
     }
     @media (hover : hover) {
@@ -810,5 +817,4 @@ img {
 .stamped-badge-caption {
     display: none;
 }
-
 

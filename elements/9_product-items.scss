@@ -346,6 +346,7 @@
 		justify-content: center;		
 		@media (min-width: 768px) {
 			justify-content: flex-start;
+			margin-bottom: 54px;
 		}	
 		.btn-social-share {
 			cursor: pointer;			
@@ -541,17 +542,19 @@
 				font-size: calc(var(--body-font-size) - 6px);
 				letter-spacing: .1em;
 				display: flex;							
-				justify-content: center;
+				justify-content: center;								
 				@media (min-width: 768px) {
 					justify-content: flex-start;
 				}
 				&:before {
 					content: '';
 					width: 4px;
-					height: 4px;
+					height: 4px;					
 					border-radius: 50%;
 					background: var(--body-link-hover);
-					margin: 13px 10px 0 0;				
+					margin: 13px 10px 0 0;	
+					flex: 0 0 4px;
+					max-width: 4px;			
 				}
 			}
 		}
