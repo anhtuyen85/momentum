@@ -763,14 +763,16 @@
 /* End product info - image */
 /* Swatch color - size */
 .product-form-cart {
-	.swatch-variants-wrapper {
+	.swatch-variants-wrapper,
+	.swt-dial-color {
         margin-bottom: 12px;
         .swatch-option:not(:last-child) {
             @media (min-width: 992px) {
                 margin-bottom: 10px;
             }
         }
-        .swatch-header {
+        .swatch-header,
+		.swt-dial-color-title {
             font-size: 12px; 
             margin-bottom: 9px; 
 			color: var(--body-link);
@@ -790,14 +792,17 @@
 				line-height: 16.7px;
 			}
         }
-		.swatch-container {
+		.swatch-container,
+		.swt-dial-color-container {
 			flex-wrap: wrap;
 			justify-content: center;
+			display: flex;
 			@media (min-width: 768px) {
 				justify-content: flex-start;
 			}
 		}
-        .swatch-item {
+        .swatch-item,
+		.swt-dial-color-item {
             padding: 0;
             margin: 0 0 10px;
 			display: flex;
@@ -879,7 +884,9 @@
                     transform: translate(-50%, 0);
                 }
             }
-            .swt-image {
+            .swt-image,
+			> a {
+				display: block;
                 width: 79.55px;
                 height: 100px;
                 margin: 0; 
@@ -893,6 +900,21 @@
 				border-color: var(--body-link-hover);				
 			}
         }
+		.swt-dial-color-item {
+			a {
+				position: relative;
+				.image__style {
+					padding: 0 !important;
+					position: static;
+				}
+			}
+			&.active {
+				a {
+					border-color: var(--body-link-hover);	
+					box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+				}
+			}
+		}
     }
 	.variants-wrapper {
 		display: flex;

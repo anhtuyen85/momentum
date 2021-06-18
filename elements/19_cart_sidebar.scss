@@ -28,7 +28,7 @@
     @media (min-width: 500px) {
         padding-left: 35px;
         padding-right: 35px;
-        padding-bottom: 90px;
+        padding-bottom: 50px;
     }
 }
 .drawer-header {
@@ -71,16 +71,17 @@
     overflow: hidden;
     overflow-y: auto;      
     @media (min-width: 500px) {
-        height: calc(100vh - 380px);
+        height: calc(100vh - 740px);
     }
     @include custom-scrollbar;
 }
-.drawer-inner {
+.drawer-inner,
+.upsell-list {
     .line-item {
         display: block;
         width: 100%;
         &:not(:last-child) {
-            margin: 0 0 85px;
+            margin: 0 0 40px;
         }
     }
     .line-item-inner {
@@ -192,15 +193,36 @@
         }
     }
 }
+.upsell-container {
+    border-top: 1px solid #4B5759;
+    padding: 0 0 50px;
+    .upsell-title {
+        padding: 30px 0 20px;
+        letter-spacing: 1.5px;
+        font-size: calc(var(--body-font-size) - 4px);
+        text-transform: uppercase;
+    }  
+    .upsell-list {
+        .btn {
+            height: 40px;            
+            width: 190px;
+            font-size: 12px;
+            line-height: 30px;
+            padding: 5px;
+            text-align: center;
+            @include font-custom;
+            letter-spacing: 0.15em;
+        }
+    } 
+}
 .drawer-footer {
     @include fixed(n, 0, 0, 0);
-    padding: 50px 25px;
+    padding: 0 25px 50px;
     background: var(--popup-bg-color);
     @media (min-width: 500px) {
-        padding-left: 68px;
-        padding-right: 68px;
-        padding-bottom: 90px;
-    }
+        padding-left: 35px;
+        padding-right: 35px;
+    }  
     .drawer-subtotal {
         @include font-custom;
         line-height: 26px;

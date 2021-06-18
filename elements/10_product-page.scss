@@ -412,10 +412,23 @@
     }
 }
 #productEngravDialog {
+
+    .btn-dialog--close {
+        @include font-body;  
+        padding: 10px;
+        @include ab(10px, n, n, 10px);
+        @media (min-width: 768px) {
+            display: none;
+        }
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
     > div {
         &:not(.drawer-close-ui) {
             max-width: 720px;      
-            padding: 30px 5vw;
+            padding: 50px 5vw 30px;
             @media (min-width: 768px) {
                 padding: 60px 80px;
             }

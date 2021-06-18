@@ -994,17 +994,24 @@
 }
 /* Custom page */
 /* Instagram */
-div.shopify-section > .text-center {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-    > p {
-        margin: 0;
-        > a {
-            font-size: calc(var(--body-font-size) - 2px);
-            letter-spacing: 1px;
+div.shopify-section {
+    > .text-center {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        > p {
+            margin: 0;
+            > a {
+                font-size: calc(var(--body-font-size) - 2px);
+                letter-spacing: 1px;
+            }
         }
-    }
+    } 
+    > svg {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 15px;
+    }   
 }
 #insta-feed {
     margin-left: -7.5px !important;
