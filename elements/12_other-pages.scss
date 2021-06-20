@@ -722,6 +722,99 @@
         @include main-bt-spacing;
     }
 }
+
+/* Register */
+.page-content {
+    .ws-registration-form {
+        padding: 0 15px;
+        max-width: 860px;
+        .ws-registration-form--form {
+            margin: 0 -15px;
+            display: flex;
+            flex-wrap: wrap;
+            > div {
+                padding-left: 15px;
+                padding-right: 15px;  
+                margin: 0 0 22px !important;              
+                input:not(.btn) {
+                    background-color: #fff;  
+                    border-radius: 8px; 
+                    padding: 20px 26px;           
+                    font-weight: 500;
+                    color: #4B5759;  
+                    height: 56px;
+                    border: none !important;
+                    @include placeholder {
+                        color: #4B5759;
+                    }   
+                }
+                textarea {
+                    background-color: #fff;  
+                    border-radius: 8px; 
+                    min-height: 56px;
+                    padding: 20px 26px;           
+                    font-weight: 500;
+                    color: #4B5759;          
+                    @include placeholder {
+                        color: #4B5759;
+                    }    
+                }
+                input.ws-btn {                    
+                    padding: 21px 45px !important;
+                    font-weight: 400;
+                    font-size: calc(var(--body-font-size) - 4px) !important;
+                    font-family: var(--ff-body);
+                    color: var(--btn1-cl);
+                    background: var(--btn1-bg-cl);
+                    border: var(--btn1-border-width) solid var(--btn1-border-cl) !important;
+                    height: 68px !important;
+                    @include transition;
+                    @media (hover : hover) {
+                        &:hover {
+                            color: var(--btn1-hover-cl);
+                            background: var(--btn1-hover-bg-cl);
+                            border-color: var(--btn1-hover-border-cl) !important;
+                        }
+                    }
+                }
+                label {
+                    font-size: var(--body-font-size) !important;
+                    display: block;
+                    line-height: 29px !important;
+                    margin-bottom: 13px !important;
+                }
+                select {
+                    border: none !important;
+                    font-size: var(--body-font-size) !important;
+                    border-radius: 8px;
+                    max-width: 100%;
+                    padding: 0 35px 0 15px;
+                    height: 56px;      
+                    line-height: 56px;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -ms-appearance: none; 
+                    -o-appearance: none;
+                    appearance: none;
+                    background-color: #fff;
+                    background-repeat: no-repeat;                  
+                    background-size: 9px 6px;
+                    background-position: calc(100% - 15px) center;
+                }                
+            }
+            .ws--half {
+                @media (min-width: 768px) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                }
+            }
+            .type--submit {
+                margin-top: 18px !important;
+            }
+        }
+    }
+}
+
 /* Search page */
 .templateSearch {
     .page-heading {
