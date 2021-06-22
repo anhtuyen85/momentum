@@ -180,8 +180,31 @@
 /* End Contact */
 
 /* Account page */
-.templateCustomersLogin, .templateCustomersRegister {
+.templateCustomersLogin, .templateCustomersRegister, .templateCustomersResetPassword {
     background: #E5E5E5;
+}
+.templateCustomersResetPassword #main-content {
+    @include top-spacing;
+    @include main-bt-spacing;
+    .title {
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        margin: 0 auto 30px;
+    }
+    .btn {
+        width: 100%;
+        padding-top: 21px;
+        padding-bottom: 21px;
+        font-weight: 400;
+        font-size: calc(var(--body-font-size) - 4px);
+        @include font-body;
+    }
+    .container * {
+        max-width: 545px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 #customerLogin, #customerRecoverPassword, #customerRegister {
     max-width: 545px;
