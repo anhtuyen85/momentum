@@ -425,6 +425,9 @@
 /* End Section Feature Blog Slide */
 /* Instagram */
 div.shopify-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     > .text-center {
         display: flex;
         justify-content: center;
