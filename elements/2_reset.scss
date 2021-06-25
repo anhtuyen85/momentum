@@ -516,8 +516,7 @@ img {
     font-size: 12px;
     line-height: 20px;
     font-weight: 500;
-    text-transform: uppercase;    
-    @include font-custom;
+    text-transform: uppercase;        
     @media (min-width: 768px) {
         justify-content: flex-start;
     }
