@@ -26,8 +26,8 @@ header {
                 }
             }
             .header-icons {               
-                ul {
-                    li {
+                > ul {
+                    > li {
                         @media (max-width: 991px) {
                             &:nth-child(1),
                             &:nth-child(2) {
@@ -289,8 +289,10 @@ header {
     }
 }
 .header-icons {    
-    ul {
+    > ul {
         height: 100%;
+    }
+    ul {        
         display: flex;
         justify-content: flex-end;
         li {
@@ -417,7 +419,7 @@ header {
                     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
                     display: none;
                     height: auto;
-                    max-height: 280px;  
+                    max-height: 280px !important;  
                     min-width: 100%; 
                     overflow-x: hidden;
                     overflow-y: auto;
@@ -469,14 +471,14 @@ header {
                             }       
                         }
                         > .dropdown-listing  {
-                            display: block;
+                            display: block;                                                        
                             @include visibility-visible; 
                         }
                     }
                 }
                 &.active {
                     > .dropdown-listing  {
-                        display: block;
+                        display: block;                                                
                         @include visibility-visible; 
                     }
                 }
@@ -816,12 +818,11 @@ header {
     }
 }
 .header-mobile-navigation {
-    @include fixed(68px, 0, n, n);
+    @include fixed(68px, 0, 0, n);
     @include visibility-hidden;
     padding: 15px 0 54px;
     background: var(--header-bg-color);    
-    width: 100%;
-    height: calc(100vh - 68px);
+    width: 100%;    
     overflow: hidden;       
     z-index: layer(popup-bg-black);
     transition: all .35s ease-in-out 0s;    

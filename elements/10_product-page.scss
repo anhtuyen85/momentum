@@ -563,16 +563,28 @@
             }
         }
     }   
+    .product-card-inner {
+        padding-bottom: 48px;
+        position: relative;
+        height: 100%;
+    }     
+    .product-card__body {
+
+    }
     .product-card {
         margin-bottom: 30px;
+        height: calc(100% - 30px);
         @media (min-width: 768px) {
             margin-bottom: 70px;
+            height: calc(100% - 70px);
         }        
         .product-price {  
             justify-content: center;
+            margin-bottom: 20px;
         }
         .product-cart-form {
-            margin-top: 30px;            
+            @include ab(n, 0, 0, 0);
+            width: 100%;
             form {
                 text-align: center;
             }
