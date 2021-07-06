@@ -1174,3 +1174,7 @@ div.shopify-section {
         }         
     }
 }
+body[class*="templateCustomers"] input {
+    text-transform: inherit;
+}
+

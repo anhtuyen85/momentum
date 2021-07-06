@@ -262,6 +262,9 @@ input {
     font-size: calc(var(--body-font-size) - 6px);  
     text-transform: uppercase;        
 }
+input[type="password"] {
+    text-transform: inherit;
+}
 textarea {
     max-width: 100%;
     min-width: 100%;
