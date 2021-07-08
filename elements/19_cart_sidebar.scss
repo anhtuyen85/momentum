@@ -112,8 +112,7 @@
         margin: 10px auto 0;
         a {
             text-transform: uppercase;
-            font-size: 12px;
-            @include font-custom;
+            font-size: 12px;            
             letter-spacing: 0.15em;
             display: inline-block;
             line-height: 30px;
@@ -146,8 +145,7 @@
         small {
             font-size: 12px;
             line-height: 20px;
-            text-transform: uppercase;
-            @include font-custom;
+            text-transform: uppercase;            
         }
     }
     .line-item-options {
@@ -155,8 +153,7 @@
             margin: 0 0 10px;
             text-transform: uppercase;
             font-size: 12px;
-            line-height: 20px;
-            @include font-custom;
+            line-height: 20px;            
         }
     }
     .line-item--price {
@@ -189,8 +186,7 @@
             }
         }
         > p {
-            margin: 0;
-            @include font-custom;
+            margin: 0;            
             font-weight: 800;
             font-size: var(--card-price);
             @media (min-width: 500px) {
@@ -239,8 +235,7 @@
             font-size: 12px;
             line-height: 30px;
             padding: 5px;
-            text-align: center;
-            @include font-custom;
+            text-align: center;            
             letter-spacing: 0.15em;
         }
     } 
@@ -253,8 +248,7 @@
         padding-left: 35px;
         padding-right: 35px;
     }  
-    .drawer-subtotal {
-        @include font-custom;
+    .drawer-subtotal {        
         line-height: 26px;
         font-weight: 500;
         font-size: var(--body-font-size);
@@ -273,8 +267,7 @@
         width: 100%;
         padding: 10px;        
         line-height: 28px;
-        font-weight: 800;        
-        @include font-custom;
+        font-weight: 800;                
         @media (min-width: 500px) {
             padding-top: 20px;    
             padding-bottom: 20px;    
@@ -282,11 +275,3 @@
         }
     }
 }
-// @supports (-webkit-touch-callout: none) {
-//     @media (max-width: 767px) {
-//         .drawer-footer {
-//             bottom: calc(constant(safe-area-inset-bottom) / 2);
-//             bottom: calc(env(safe-area-inset-bottom) / 2);
-//         }        
-//     }   
-// }   

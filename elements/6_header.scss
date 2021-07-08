@@ -682,7 +682,7 @@ header {
                 > .megaMenu-container {
                     min-width: 200px;
                     max-width: 270px;
-                    margin-top: 51px;
+                    margin-top: 22px;
                     padding: 25px 0;
                     box-shadow: 3px 6px 22px 2px rgba(0, 0, 0, .15);                        
                     &:before {
@@ -746,6 +746,7 @@ header {
     }
     .collection-item {
         margin-bottom: 20px;
+        padding: 0 10px;
     }
     .collection-info {
         padding: 10px 0 0;        
@@ -845,8 +846,7 @@ header {
         z-index: laye(header-fixed);
         a {
             width: 100%;
-            font-weight: 500;
-            @include font-custom;
+            font-weight: 500;            
             font-size: calc(var(--body-font-size) - 3px);
             letter-spacing: 1.5px;
             line-height: 30px;

@@ -57,9 +57,6 @@
 @mixin font-heading {
     font-family: var(--ff-heading);    
 }
-@mixin font-custom {
-    font-family: "Sackers Gothic Std";
-}
 @mixin point-event {
     pointer-events: none;     
 }

@@ -114,8 +114,7 @@
                     line-height: 21.6px;
                     font-weight: 500; 
                     font-size: 18px;
-                    text-transform: uppercase;
-                    @include font-custom;
+                    text-transform: uppercase;                    
                 }
             }
             .article-item {
@@ -152,8 +151,7 @@
                 font-weight: 500; 
                 line-height: 21.6px; 
                 text-transform: uppercase;
-                color: var(--body-link);
-                @include font-custom;
+                color: var(--body-link);                
             }
             ul {
                 margin: 0 -4px; 

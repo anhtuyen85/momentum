@@ -1,6 +1,6 @@
 /* Footer */
 footer {
-    margin-top: auto;          //fix short content templateCaptcha
+    margin-top: auto;          
 }
 .section-footer {
     padding: 36px 0 0; 
@@ -29,8 +29,7 @@ footer {
     color: #ffffff; 
     font-weight: 500;
     margin: 0 0 15px;  
-    letter-spacing: .15em;
-    @include font-custom;
+    letter-spacing: .15em;    
 }
 .footer-logo-information {
     color: var(--footer-text-color);

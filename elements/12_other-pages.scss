@@ -1086,8 +1086,7 @@
                     line-height: 24px;
                     font-weight: 500;
                     margin-bottom: 13px;
-                    text-transform: uppercase;
-                    @include font-custom;
+                    text-transform: uppercase;                    
                 }
                 .text-2 {
                     color: #fff;
@@ -1177,4 +1176,3 @@ div.shopify-section {
 body[class*="templateCustomers"] input {
     text-transform: inherit;
 }
-
